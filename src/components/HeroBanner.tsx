@@ -1,18 +1,12 @@
-import { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { useState, useRef, Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
+import { ErrorBoundary } from 'react-error-boundary';
 
 function Stars() {
   const ref = useRef<any>();
-  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
-
-  useFrame((state, delta) => {
-    if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
-    }
-  });
+  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }));
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
@@ -24,7 +18,7 @@ function Stars() {
       >
         <PointMaterial
           transparent
-          color="#8B5CF6"
+          color="#ffa0e0"
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}
@@ -34,21 +28,30 @@ function Stars() {
   );
 }
 
+function FallbackComponent() {
+  return <div className="text-white">Something went wrong with the 3D animation</div>;
+}
+
 export const HeroBanner = () => {
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
-        <Canvas camera={{ position: [0, 0, 1] }}>
-          <Stars />
-        </Canvas>
+        <ErrorBoundary FallbackComponent={FallbackComponent}>
+          <Canvas camera={{ position: [0, 0, 1] }}>
+            <Suspense fallback={null}>
+              <Stars />
+            </Suspense>
+          </Canvas>
+        </ErrorBoundary>
       </div>
-      <div className="absolute inset-0 flex items-center justify-center text-center z-10 bg-gradient-to-b from-transparent via-background/50 to-background">
-        <div className="max-w-3xl px-4 glass-card p-8">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-fade-in">
+      
+      <div className="relative z-10 flex h-full items-center justify-center">
+        <div className="text-center animate-fade-in">
+          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             Data Analytics Director
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 animate-fade-in delay-200">
-            Transforming Data into Strategic Insights
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Transforming complex data into actionable insights through innovative analytics solutions
           </p>
         </div>
       </div>
