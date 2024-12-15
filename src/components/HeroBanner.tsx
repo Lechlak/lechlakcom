@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 import { ErrorBoundary } from 'react-error-boundary';
+import * as THREE from 'three';
 
 function Stars() {
   const ref = useRef<THREE.Points>(null);
