@@ -5,16 +5,24 @@ import { Portfolio } from "@/components/Portfolio";
 import { Awards } from "@/components/Awards";
 import { Contact } from "@/components/Contact";
 import { WorkflowAnimation } from "@/components/WorkflowAnimation";
+import { Navigation } from "@/components/Navigation";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <HeroBanner />
+    <div className="min-h-screen bg-background pt-16">
+      <Navigation />
+      <div id="hero">
+        <HeroBanner />
+      </div>
       
       <main className="container mx-auto px-4 space-y-32 py-16">
-        <About />
-        <Experience />
-        <section className="py-20">
+        <div id="about">
+          <About />
+        </div>
+        <div id="experience">
+          <Experience />
+        </div>
+        <section id="workflow" className="py-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Data Flow Architecture
@@ -26,7 +34,9 @@ const Index = () => {
           <WorkflowAnimation />
         </section>
         <Portfolio />
-        <Awards />
+        <div id="awards">
+          <Awards />
+        </div>
         <Contact />
       </main>
     </div>

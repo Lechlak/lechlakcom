@@ -3,12 +3,15 @@ import { Github, Mail, MessageSquare } from "lucide-react";
 
 export const Contact = () => {
   return (
-    <section className="pb-32">
+    <section id="contact" className="pb-32">
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
         Get in Touch
       </h2>
       <Card className="glass-card max-w-2xl mx-auto">
         <CardContent className="p-8">
+          <p className="text-center text-lg text-gray-300 mb-8">
+            Reach out if you're interested in developing and enhancing engineering workflows together.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
               href="https://github.com/yourusername"
