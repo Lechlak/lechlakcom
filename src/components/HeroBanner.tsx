@@ -1,83 +1,53 @@
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Points, PointMaterial } from '@react-three/drei';
+import * as random from 'maath/random/dist/maath-random.esm';
 
-export const HeroBanner = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+function Stars() {
+  const ref = useRef<any>();
+  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.5 });
 
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    containerRef.current.appendChild(renderer.domElement);
-
-    // Create a grid of spheres
-    const spheres: THREE.Mesh[] = [];
-    const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const material = new THREE.MeshPhongMaterial({
-      color: 0x8B5CF6,
-      transparent: true,
-      opacity: 0.8,
-    });
-
-    for (let i = 0; i < 50; i++) {
-      const sphere = new THREE.Mesh(geometry, material);
-      sphere.position.x = Math.random() * 40 - 20;
-      sphere.position.y = Math.random() * 40 - 20;
-      sphere.position.z = Math.random() * 40 - 20;
-      spheres.push(sphere);
-      scene.add(sphere);
+  useFrame((state, delta) => {
+    if (ref.current) {
+      ref.current.rotation.x -= delta / 10;
+      ref.current.rotation.y -= delta / 15;
     }
-
-    // Add lights
-    const ambientLight = new THREE.AmbientLight(0x404040);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-
-    camera.position.z = 30;
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-
-      spheres.forEach((sphere) => {
-        sphere.rotation.x += 0.01;
-        sphere.rotation.y += 0.01;
-      });
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      containerRef.current?.removeChild(renderer.domElement);
-    };
-  }, []);
+  });
 
   return (
+    <group rotation={[0, 0, Math.PI / 4]}>
+      <Points
+        ref={ref}
+        positions={sphere}
+        stride={3}
+        frustumCulled={false}
+      >
+        <PointMaterial
+          transparent
+          color="#8B5CF6"
+          size={0.005}
+          sizeAttenuation={true}
+          depthWrite={false}
+        />
+      </Points>
+    </group>
+  );
+}
+
+export const HeroBanner = () => {
+  return (
     <div className="relative h-screen">
-      <div ref={containerRef} className="absolute inset-0" />
-      <div className="absolute inset-0 flex items-center justify-center text-center z-10 bg-gradient-to-b from-transparent to-background">
-        <div className="max-w-3xl px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+      <div className="absolute inset-0">
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Stars />
+        </Canvas>
+      </div>
+      <div className="absolute inset-0 flex items-center justify-center text-center z-10 bg-gradient-to-b from-transparent via-background/50 to-background">
+        <div className="max-w-3xl px-4 glass-card p-8">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-fade-in">
             Data Analytics Director
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300">
+          <p className="text-xl md:text-2xl text-gray-300 animate-fade-in delay-200">
             Transforming Data into Strategic Insights
           </p>
         </div>
