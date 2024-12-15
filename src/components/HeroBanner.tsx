@@ -5,7 +5,7 @@ import * as random from 'maath/random/dist/maath-random.esm';
 import { ErrorBoundary } from 'react-error-boundary';
 
 function Stars() {
-  const ref = useRef<any>();
+  const ref = useRef<THREE.Points>(null);
   const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }));
 
   return (
@@ -37,7 +37,10 @@ export const HeroBanner = () => {
     <div className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0">
         <ErrorBoundary FallbackComponent={FallbackComponent}>
-          <Canvas camera={{ position: [0, 0, 1] }}>
+          <Canvas
+            camera={{ position: [0, 0, 1] }}
+            style={{ background: 'transparent' }}
+          >
             <Suspense fallback={null}>
               <Stars />
             </Suspense>
