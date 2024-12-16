@@ -6,19 +6,27 @@ interface WorkflowStepProps {
   title: string;
   description: string;
   isActive: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export const WorkflowStep = ({
   icon: Icon,
   title,
   description,
-  isActive
+  isActive,
+  className,
+  style
 }: WorkflowStepProps) => {
   return (
-    <div className={cn(
-      "glass-card p-6 transition-all duration-300",
-      isActive ? "scale-105 shadow-lg" : "scale-100"
-    )}>
+    <div 
+      className={cn(
+        "glass-card p-6 transition-all duration-300",
+        isActive ? "scale-105 shadow-lg" : "scale-100",
+        className
+      )}
+      style={style}
+    >
       <div className="flex items-center gap-4">
         <div className={cn(
           "p-3 rounded-lg transition-colors",
