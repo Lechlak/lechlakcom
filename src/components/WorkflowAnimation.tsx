@@ -1,119 +1,93 @@
-import { Database, Cpu, Send } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { Database, GitBranch, Cpu } from 'lucide-react';
 import { WorkflowStep } from './WorkflowStep';
-
-const STEPS = [
-  {
-    icon: Database,
-    title: "Data Collection",
-    description: "Gathering and organizing information"
-  },
-  {
-    icon: Cpu,
-    title: "Processing & Analysis",
-    description: "Advanced data processing algorithms"
-  },
-  {
-    icon: Send,
-    title: "Automated Output",
-    description: "Delivering actionable results"
-  }
-];
+import { useInView } from 'react-intersection-observer';
 
 export const WorkflowAnimation = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
+
+  const steps = [
+    {
+      icon: Database,
+      title: "Data Collection",
+      description: "Gathering and organizing raw data from multiple sources",
+    },
+    {
+      icon: Cpu,
+      title: "Processing & Analysis",
+      description: "Advanced algorithms process and analyze data patterns",
+    },
+    {
+      icon: GitBranch,
+      title: "Automated Output",
+      description: "Delivering actionable insights through automated reporting",
+    },
+  ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
-    const element = document.getElementById('workflow-animation');
-    if (element) {
-      observer.observe(element);
-    }
-
-    return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isVisible) {
+    if (inView) {
       const interval = setInterval(() => {
-        setActiveStep((current) => (current + 1) % STEPS.length);
+        setActiveStep((prev) => (prev + 1) % steps.length);
       }, 3000);
-
       return () => clearInterval(interval);
     }
-  }, [isVisible]);
+  }, [inView, steps.length]);
 
   return (
-    <div id="workflow-animation" className="relative max-w-4xl mx-auto py-20">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl" />
-      
-      <div className="relative grid md:grid-cols-3 gap-6 px-4">
-        {STEPS.map((step, index) => (
-          <WorkflowStep
-            key={index}
-            {...step}
-            isActive={index === activeStep}
-            className={isVisible ? 'animate-fade-in' : ''}
-            style={{ animationDelay: `${index * 200}ms` }}
-          />
-        ))}
-      </div>
-
-      {/* Workflow lines */}
-      <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 hidden md:block" style={{ zIndex: -1 }}>
-        <defs>
-          <linearGradient id="workflow-gradient">
-            <stop offset="0%" stopColor="#3B82F6" />
-            <stop offset="100%" stopColor="#8B5CF6" />
-          </linearGradient>
-          
-          {/* Define the particle path */}
-          <path
-            id="particle-path"
-            d="M 20% 50% L 80% 50%"
-            stroke="none"
-            fill="none"
-          />
-        </defs>
-        
-        {/* Main workflow line */}
+    <div ref={ref} className="relative max-w-4xl mx-auto py-12">
+      <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-0">
         <line
-          x1="20%"
+          x1="10%"
           y1="50%"
-          x2="80%"
+          x2="90%"
           y2="50%"
-          stroke="url(#workflow-gradient)"
+          stroke="currentColor"
           strokeWidth="2"
-          className="workflow-line"
+          className="workflow-line text-purple-400/30"
         />
       </svg>
 
       {/* Animated particles */}
-      {isVisible && (
-        <div className="hidden md:block">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className={`particle absolute w-2 h-2 rounded-full bg-blue-400 delay-${i * 200}`}
+      {inView && (
+        <>
+          <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-1">
+            <circle
+              r="4"
+              fill="currentColor"
+              className="text-purple-400 particle"
               style={{
-                offsetPath: "path('M 20% 50% L 80% 50%')",
-                animation: `moveParticle 2s linear infinite ${i * 0.5}s`
+                offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
             />
-          ))}
-        </div>
+            <circle
+              r="4"
+              fill="currentColor"
+              className="text-purple-400 particle delay-200"
+              style={{
+                offsetPath: "path('M 10% 50% L 90% 50%')",
+              }}
+            />
+          </svg>
+        </>
       )}
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {steps.map((step, index) => (
+          <WorkflowStep
+            key={index}
+            isActive={activeStep === index}
+            icon={step.icon}
+            title={step.title}
+            description={step.description}
+            style={{ animationDelay: `${index * 200}ms` }}
+            className={`animate-fade-in ${inView ? 'opacity-100' : 'opacity-0'}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };

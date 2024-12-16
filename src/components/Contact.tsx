@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Mail, MessageSquare } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export const Contact = () => {
   return (
@@ -9,9 +10,15 @@ export const Contact = () => {
       </h2>
       <Card className="glass-card max-w-2xl mx-auto">
         <CardContent className="p-8">
-          <p className="text-center text-lg text-gray-300 mb-8">
-            Reach out if you're interested in developing and enhancing engineering workflows together.
-          </p>
+          <div className="flex flex-col items-center mb-8">
+            <Avatar className="w-24 h-24 mb-4">
+              <AvatarImage src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952" alt="Profile" className="object-cover" />
+              <AvatarFallback>DA</AvatarFallback>
+            </Avatar>
+            <p className="text-center text-lg text-gray-300">
+              Reach out if you're interested in developing and enhancing engineering workflows together.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
               href="https://github.com/yourusername"
