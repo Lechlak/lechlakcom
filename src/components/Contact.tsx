@@ -12,7 +12,7 @@ export const Contact = () => {
         <CardContent className="p-8">
           <div className="flex flex-col items-center mb-8">
             <Avatar className="w-24 h-24 mb-4">
-              <AvatarImage src="andywdw.jpg" alt="Profile" className="object-cover" />
+              <AvatarImage src="./andywdw.jpg" alt="Profile" className="object-cover" />
               <AvatarFallback>DA</AvatarFallback>
             </Avatar>
             <p className="text-center text-lg text-gray-300">
