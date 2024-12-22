@@ -27,7 +27,7 @@ export const Awards = () => {
 
   return (
     <section>
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
         Awards & Recognition
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -41,7 +41,7 @@ export const Awards = () => {
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-purple-400">{award.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-400">{award.title}</h3>
               <p className="text-sm text-gray-400 mb-3">
                 {award.organization} • {award.year}
               </p>

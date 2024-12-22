@@ -24,8 +24,8 @@ export const Navigation = () => {
                 smooth={true}
                 offset={-64}
                 duration={500}
-                className="text-sm font-medium text-gray-400 hover:text-purple-400 cursor-pointer transition-colors"
-                activeClass="text-purple-400"
+                className="text-sm font-medium text-gray-400 hover:text-blue-400 cursor-pointer transition-colors"
+                activeClass="text-blue-400"
               >
                 {section.label}
               </Link>
