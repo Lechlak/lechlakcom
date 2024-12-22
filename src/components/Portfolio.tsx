@@ -24,7 +24,7 @@ export const Portfolio = () => {
       title: "Accessibility",
       description: "Voluntary Product Accessibility Template - Digital Accessibility (AA)",
       tags: ["Lighthouse", "WCAG", "WebAIM", "Wrike"],
-      image: "./"
+      image: "./user-experience.png"
     },
     {
       title: "Workflow and Automation",
