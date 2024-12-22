@@ -10,6 +10,7 @@ interface Particle {
 const ParticleNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [particles, setParticles] = useState<Particle[]>([]);
+  const [currentConnectionIndex, setCurrentConnectionIndex] = useState(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -35,8 +36,8 @@ const ParticleNetwork = () => {
         newParticles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
+          vx: (Math.random() - 0.5) * 0.2, // Reduced velocity
+          vy: (Math.random() - 0.5) * 0.2, // Reduced velocity
         });
       }
       
@@ -68,22 +69,25 @@ const ParticleNetwork = () => {
         ctx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw connections
-        particles.forEach(otherParticle => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 100) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.stroke();
-          }
-        });
-
         return particle;
       });
+
+      // Draw single connection
+      if (updatedParticles.length >= 2) {
+        const particle1 = updatedParticles[currentConnectionIndex % updatedParticles.length];
+        const particle2 = updatedParticles[(currentConnectionIndex + 1) % updatedParticles.length];
+        
+        const dx = particle1.x - particle2.x;
+        const dy = particle1.y - particle2.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 200) { // Increased connection distance
+          ctx.beginPath();
+          ctx.moveTo(particle1.x, particle1.y);
+          ctx.lineTo(particle2.x, particle2.y);
+          ctx.stroke();
+        }
+      }
 
       setParticles(updatedParticles);
       requestAnimationFrame(animate);
@@ -91,11 +95,17 @@ const ParticleNetwork = () => {
 
     const animationFrame = requestAnimationFrame(animate);
 
+    // Change connection every 2 seconds
+    const connectionInterval = setInterval(() => {
+      setCurrentConnectionIndex(prev => prev + 1);
+    }, 2000);
+
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrame);
+      clearInterval(connectionInterval);
     };
-  }, [particles]);
+  }, [particles, currentConnectionIndex]);
 
   return (
     <canvas
