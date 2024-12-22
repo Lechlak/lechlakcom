@@ -12,6 +12,22 @@ export const About = () => {
                 With over 15 years of experience in data analytics, development, and user interaction design, I specialize in transforming complex data into actionable insights. My expertise spans across full-stack development, statistical analysis, and machine learning implementations. Continuous improvement through clear
                 communication has been central to my success in project management. I have developed a strong passion for analyzing processes comprehensively and implementing effective automation solutions. Throughout my career, I have successfully utilized methodologies such as LEAN, Agile, SCRUM, Waterfall, Kanban, and Six Sigma. As a dedicated problem solver, I believe that leveraging analytics is essential for driving progress and innovation.
               </p>
+              <div className="p-4">
+              <div className="text-3xl font-bold text-blue-400">15+</div>
+              <div className="text-sm text-gray-400">Years Experience</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-cyan-400">50+</div>
+              <div className="text-sm text-gray-400">Projects Completed</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-blue-400">30+</div>
+              <div className="text-sm text-gray-400">Happy Clients</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-cyan-400">15+</div>
+              <div className="text-sm text-gray-400">Technologies</div>
+            </div>
             </div>
             <div className="flex-1">
               <img 
