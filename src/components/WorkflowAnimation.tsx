@@ -58,7 +58,7 @@ export const WorkflowAnimation = () => {
             <circle
               r="4"
               fill="currentColor"
-              className="bg-gradient-to-r from-cyan-400 to-cyan-400 particle"
+              className="bg-gradient-to-r from-cyan-500 to-sky-500 particle"
               style={{
                 offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
@@ -66,7 +66,7 @@ export const WorkflowAnimation = () => {
             <circle
               r="4"
               fill="currentColor"
-              className="bg-gradient-to-r from-cyan-400 to-cyan-400 particle delay-100"
+              className="bg-gradient-to-r from-cyan-500 to-sky-500 particle delay-100"
               style={{
                 offsetPath: "path('M 10% 50% L 90% 50%')",
               }}

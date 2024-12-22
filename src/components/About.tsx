@@ -18,7 +18,7 @@ export const About = () => {
               <div className="text-sm text-gray-400">Years Experience</div>
             </div>
             <div className="p-8">
-              <div className="text-3xl font-bold text-cyan-500">10+</div>
+              <div className="text-3xl font-bold text-sky-500">10+</div>
               <div className="text-sm text-gray-400">Years married</div>
             </div>
             <div className="p-8">
@@ -26,7 +26,7 @@ export const About = () => {
               <div className="text-sm text-gray-400">Children</div>
             </div>
             <div className="p-8">
-              <div className="text-3xl font-bold text-cyan-500">1</div>
+              <div className="text-3xl font-bold text-sky-500">1</div>
               <div className="text-sm text-gray-400">Puppy</div>
             </div>
             </div>
