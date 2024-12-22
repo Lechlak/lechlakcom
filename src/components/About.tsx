@@ -5,10 +5,10 @@ export const About = () => {
         <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
           About Me
         </h2>
-        <div className="glass-card p-4">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
-        </div>
         <div className="glass-card p-8">
+          <div className="text-lg text-gray-300 mb-6">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" /> 
+          </div>
           <p className="text-lg text-gray-300 mb-6">
             With over 15 years of experience in data analytics, development, and user interaction design, I specialize in transforming complex data into actionable insights. My expertise spans across full-stack development, statistical analysis, and machine learning implementations. Continuous improvement through clear
 communication has been central to my success in
