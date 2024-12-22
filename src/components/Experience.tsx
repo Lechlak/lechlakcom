@@ -4,20 +4,20 @@ export const Experience = () => {
   const experiences = [
     {
       title: "Customer Experience",
-      company: "Tech Solutions Inc.",
-      period: "2020 - Present",
-      description: "Utilizing 12 years of analytics expertise to inform and drive strategic business decisions",
+      company: "Multiple",
+      period: "2011 - Present",
+      description: "Utilizing 15 years of analytics expertise to inform and drive strategic business decisions",
     },
     {
       title: "Project Management",
-      company: "Data Insights Corp",
-      period: "2017 - 2020",
+      company: "Multiple",
+      period: "2012 - Present",
       description: "Cultivating leadership, mentoring, and coaching skills to enhance talent development retention for over 14 years",
     },
     {
       title: "Strategic Roadmap",
-      company: "Web Innovations",
-      period: "2015 - 2017",
+      company: "Toledo Lucas County Public Library",
+      period: "2015 - 2022",
       description: "Led the evaluation of three stategic plans, assessing their success and developing data-driven recommendations for continued improvement",
     },
   ];
