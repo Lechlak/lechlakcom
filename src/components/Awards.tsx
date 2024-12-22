@@ -27,7 +27,7 @@ export const Awards = () => {
 
   return (
     <section>
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-sky-700 bg-clip-text text-transparent">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text text-transparent">
         Awards & Recognition
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
