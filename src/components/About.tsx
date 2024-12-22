@@ -15,7 +15,7 @@ export const About = () => {
             </div>
             <div className="flex-1">
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+                src="./andyprofile.jpg" 
                 alt="About Andy Lechlak"
                 className="rounded-lg w-full h-auto object-cover"
               />

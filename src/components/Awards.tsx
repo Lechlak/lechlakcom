@@ -7,21 +7,21 @@ export const Awards = () => {
       organization: "Mozilla Foundation",
       year: "2018-2019",
       description: "Recognition for web literacy education.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
+      image: "./mozilla-web-literacy.jpg",
     },
     {
       title: "2023 IMLS National Medal Winner",
       organization: "Toledo Lucas County Public Library",
       year: "2023",
       description: "Awarded to only 8 libraries and/or museums..",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      image: "./nationalmedla.jpg",
     },
     {
       title: "Google Ad Award Recipient",
       organization: "Multiple",
       year: "2018-Present",
       description: "Providing $10,000 monthly per nonprofit.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "./google-ad-grants.png",
     },
   ];
 

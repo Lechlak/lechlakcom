@@ -6,37 +6,37 @@ export const Portfolio = () => {
       title: "AI-Powered Analytics Dashboard",
       description: "Real-time data visualization platform with predictive analytics workflow.",
       tags: ["Python", "SQL", "Tableau"],
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+      image: "./analytics.png"
     },
     {
-      title: "Demographic and Socio-Economic Reporting",
+      title: "Demographic & Socio-Economic Reporting",
       description: "Interactive platform for market trend analysis and forecasting",
       tags: ["Python", "SQL", "Tableau"],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      image: "./demographics.png"
     },
     {
       title: "Leadership and Implementation",
       description: "Innovation Accelerator, Employee Engagement, Learning Management System",
       tags: ["CX/UX", "WordPress", "Wrike"],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+      image: "innovation-accelerator.png"
     },
     {
       title: "Accessibility",
       description: "Voluntary Product Accessibility Template - Digital Accessibility (AA)",
       tags: ["Lighthouse", "WCAG", "WebAIM", "Wrike"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+      image: "./"
     },
     {
       title: "Workflow and Automation",
       description: "Integrate data to improve communication, clarity, and accountability.",
       tags: ["Power Automate", "Sharepoint", "Zapier"],
-      image: "./catalog-overlay.png"
+      image: "./zapier.png"
     },
     {
       title: "ToledoLibrary.org",
       description: "Over 100 active integrations and 30 million views",
       tags: ["PHP", "React", "WordPress"],
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      image: "./toledo-library.png"
     },
   ];
 
