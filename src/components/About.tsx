@@ -18,16 +18,16 @@ export const About = () => {
               <div className="text-sm text-gray-400">Years Experience</div>
             </div>
             <div className="p-8">
-              <div className="text-3xl font-bold text-cyan-500">50+</div>
-              <div className="text-sm text-gray-400">Projects Completed</div>
+              <div className="text-3xl font-bold text-cyan-500">10+</div>
+              <div className="text-sm text-gray-400">Years married</div>
             </div>
             <div className="p-8">
-              <div className="text-3xl font-bold text-cyan-500">30+</div>
-              <div className="text-sm text-gray-400">Happy Clients</div>
+              <div className="text-3xl font-bold text-cyan-500">3</div>
+              <div className="text-sm text-gray-400">Children</div>
             </div>
             <div className="p-8">
-              <div className="text-3xl font-bold text-cyan-500">15+</div>
-              <div className="text-sm text-gray-400">Technologies</div>
+              <div className="text-3xl font-bold text-cyan-500">1</div>
+              <div className="text-sm text-gray-400">Puppy</div>
             </div>
             </div>
             </div>
@@ -37,24 +37,6 @@ export const About = () => {
                 alt="About Andy Lechlak"
                 className="rounded-lg w-full h-auto object-cover"
               />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-8">
-            <div className="p-4">
-              <div className="text-3xl font-bold text-blue-400">15+</div>
-              <div className="text-sm text-gray-400">Years Experience</div>
-            </div>
-            <div className="p-4">
-              <div className="text-3xl font-bold text-cyan-400">50+</div>
-              <div className="text-sm text-gray-400">Projects Completed</div>
-            </div>
-            <div className="p-4">
-              <div className="text-3xl font-bold text-blue-400">30+</div>
-              <div className="text-sm text-gray-400">Happy Clients</div>
-            </div>
-            <div className="p-4">
-              <div className="text-3xl font-bold text-cyan-400">15+</div>
-              <div className="text-sm text-gray-400">Technologies</div>
             </div>
           </div>
         </div>
