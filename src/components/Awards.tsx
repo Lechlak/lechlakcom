@@ -18,7 +18,7 @@ export const Awards = () => {
     },
     {
       title: "Google Ad Award Recipient",
-      organization: "Various",
+      organization: "Multiple",
       year: "2018-Present",
       description: "Providing $10,000 monthly in ad credit per nonprofit.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
