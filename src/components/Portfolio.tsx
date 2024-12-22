@@ -56,13 +56,13 @@ export const Portfolio = () => {
               />
             </div>
             <CardContent className="p-6">
-              <h3 className="text-xl font-semibold mb-3 text-cyan-400">{project.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-sky-500">{project.title}</h3>
               <p className="text-gray-300 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 text-sm rounded-full bg-blue-400/10 text-cyan-400"
+                    className="px-3 py-1 text-sm rounded-full bg-sky-800/10 text-sky-500"
                   >
                     {tag}
                   </span>
