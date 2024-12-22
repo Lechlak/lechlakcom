@@ -7,7 +7,7 @@ export const About = () => {
         </h2>
         <div className="glass-card p-8">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="flex-1">
+            <div className="flex-2">
               <p className="text-lg text-gray-300 mb-6">
                 With over 15 years of experience in data analytics, development, and user interaction design, I specialize in transforming complex data into actionable insights. My expertise spans across full-stack development, statistical analysis, and machine learning implementations. Continuous improvement through clear
                 communication has been central to my success in project management. I have developed a strong passion for analyzing processes comprehensively and implementing effective automation solutions. Throughout my career, I have successfully utilized methodologies such as LEAN, Agile, SCRUM, Waterfall, Kanban, and Six Sigma. As a dedicated problem solver, I believe that leveraging analytics is essential for driving progress and innovation.

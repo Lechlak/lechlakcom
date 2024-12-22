@@ -14,7 +14,7 @@ export const Awards = () => {
       organization: "Toledo Lucas County Public Library",
       year: "2023",
       description: "Awarded to only 8 libraries and/or museums..",
-      image: "./nationalmedla.jpg",
+      image: "./nationalmedal.jpg",
     },
     {
       title: "Google Ad Award Recipient",
