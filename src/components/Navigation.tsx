@@ -31,7 +31,7 @@ export const Navigation = () => {
               </Link>
             ))}
           </div>
-          <ThemeToggle />
+          /*<ThemeToggle />*/
         </div>
       </div>
     </nav>

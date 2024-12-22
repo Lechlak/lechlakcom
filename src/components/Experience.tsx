@@ -3,22 +3,22 @@ import { Card, CardContent } from "@/components/ui/card";
 export const Experience = () => {
   const experiences = [
     {
-      title: "Manager of Design and Analytics",
+      title: "Customer Experience",
       company: "Tech Solutions Inc.",
       period: "2020 - Present",
-      description: "Leading a team of data analysts and scientists in developing predictive models and business intelligence solutions.",
+      description: "Utilizing 12 years of analytics expertise to inform and drive strategic business decisions",
     },
     {
-      title: "Manager of Innovation and Strategy",
+      title: "Project Management",
       company: "Data Insights Corp",
       period: "2017 - 2020",
-      description: "Spearheaded the development of automated reporting systems and implemented machine learning models.",
+      description: "Cultivating leadership, mentoring, and coaching skills to enhance talent development retention for over 14 years",
     },
     {
-      title: "Digital Strategist / Virtual Services Coordinator",
+      title: "Strategic Roadmap",
       company: "Web Innovations",
       period: "2015 - 2017",
-      description: "Developed and maintained data-driven web applications using React, Node.js, and Python.",
+      description: "Led the evaluation of three stategic plans, assessing their success and developing data-driven recommendations for continued improvement",
     },
   ];
 

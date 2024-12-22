@@ -7,11 +7,21 @@ export const About = () => {
         </h2>
         <div className="glass-card p-8">
           <p className="text-lg text-gray-300 mb-6">
-            With over a decade of experience in data analytics and web development, I specialize in transforming complex data into actionable insights. My expertise spans across full-stack development, statistical analysis, and machine learning implementations.
+            With over 15 years of experience in data analytics, development, and user interaction design, I specialize in transforming complex data into actionable insights. My expertise spans across full-stack development, statistical analysis, and machine learning implementations. Continuous improvement through clear
+communication has been central to my success in
+project management. I have developed a strong
+passion for analyzing processes comprehensively
+and implementing effective automation solutions.
+Throughout my career, I have successfully utilized
+methodologies such as LEAN, Agile, SCRUM,
+Waterfall, Kanban, and Six Sigma. As a dedicated
+problem solver, I believe that leveraging analytics is
+essential for driving progress and innovation.
           </p>
+          /* 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <div className="p-4">
-              <div className="text-3xl font-bold text-blue-400">10+</div>
+              <div className="text-3xl font-bold text-blue-400">15+</div>
               <div className="text-sm text-gray-400">Years Experience</div>
             </div>
             <div className="p-4">
@@ -27,6 +37,7 @@ export const About = () => {
               <div className="text-sm text-gray-400">Technologies</div>
             </div>
           </div>
+          */
         </div>
       </div>
     </section>

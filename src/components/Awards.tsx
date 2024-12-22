@@ -3,24 +3,24 @@ import { Card, CardContent } from "@/components/ui/card";
 export const Awards = () => {
   const awards = [
     {
-      title: "Data Innovation Award",
-      organization: "Tech Excellence Summit",
-      year: "2023",
-      description: "Recognized for innovative use of AI in data analytics",
+      title: "Web Literacy Grant Recipient",
+      organization: "Mozilla Foundation",
+      year: "2018-2019",
+      description: "Recognized for providing web literacy to the community.",
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
     },
     {
-      title: "Best Data Visualization",
-      organization: "Data Science Conference",
-      year: "2022",
-      description: "Award for exceptional data storytelling through visualization",
+      title: "2023 IMLS National Medal Winner",
+      organization: "Toledo Lucas County Public Library",
+      year: "2023",
+      description: "Awarded to only 8 libraries and/or museums in the country.",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     },
     {
-      title: "Analytics Leader of the Year",
-      organization: "Analytics Weekly",
-      year: "2021",
-      description: "Distinguished for leadership in analytics transformation",
+      title: "Google Ad Award Recipient",
+      organization: "Various",
+      year: "2018-Present",
+      description: "Providing $10,000 monthly in ad credit per nonprofit.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
     },
   ];

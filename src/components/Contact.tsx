@@ -21,7 +21,7 @@ export const Contact = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/Lechlak"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center p-4 hover:scale-105 transition-transform duration-300"
@@ -30,7 +30,7 @@ export const Contact = () => {
               <span className="text-gray-300">GitHub</span>
             </a>
             <a
-              href="https://discord.com/users/yourid"
+              href="https://discord.com/users/225670301084680194"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center p-4 hover:scale-105 transition-transform duration-300"
@@ -39,7 +39,7 @@ export const Contact = () => {
               <span className="text-gray-300">Discord</span>
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:andy@lechlak.com"
               className="flex flex-col items-center p-4 hover:scale-105 transition-transform duration-300"
             >
               <Mail className="h-8 w-8 mb-2 text-purple-400" />
