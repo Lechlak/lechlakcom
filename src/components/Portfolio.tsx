@@ -30,7 +30,7 @@ export const Portfolio = () => {
       title: "Workflow and Automation",
       description: "Integrate data to improve communication, clarity, and accountability.",
       tags: ["Power Automate", "Sharepoint", "Zapier"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+      image: "./catalog-overlay.png"
     },
     {
       title: "ToledoLibrary.org",
