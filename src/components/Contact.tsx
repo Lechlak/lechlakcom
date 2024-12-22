@@ -10,15 +10,14 @@ export const Contact = () => {
       </h2>
       <Card className="glass-card max-w-2xl mx-auto">
         <CardContent className="p-8">
-        <div className="glass-card p-8">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="flex-1">
-              <img 
-                src="./andywdw.jpg" 
-                alt="About Andy Lechlak"
-                className="rounded-lg w-full h-auto object-cover"
-              />
-            </div>
+          <div className="flex flex-col items-center mb-8">
+            <Avatar className="w-24 h-24 mb-4">
+              <AvatarImage src="andywdw.jpg" alt="Profile" className="object-cover" />
+              <AvatarFallback>DA</AvatarFallback>
+            </Avatar>
+            <p className="text-center text-lg text-gray-300">
+              Reach out if you're interested in developing and enhancing engineering workflows together.
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <a
