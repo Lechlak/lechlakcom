@@ -24,7 +24,7 @@ export const Experience = () => {
 
   return (
     <section>
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
         Experience
       </h2>
       <div className="space-y-6">
@@ -33,7 +33,7 @@ export const Experience = () => {
             <CardContent className="p-6">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-400">{exp.title}</h3>
+                  <h3 className="text-xl font-semibold text-cyan-400">{exp.title}</h3>
                   <p className="text-gray-400">{exp.company}</p>
                 </div>
                 <span className="text-sm text-gray-500">{exp.period}</span>

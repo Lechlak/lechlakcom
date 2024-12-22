@@ -6,28 +6,28 @@ export const Awards = () => {
       title: "Web Literacy Grant Recipient",
       organization: "Mozilla Foundation",
       year: "2018-2019",
-      description: "Recognized for providing web literacy to the community.",
+      description: "Recognition for web literacy education.",
       image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
     },
     {
       title: "2023 IMLS National Medal Winner",
       organization: "Toledo Lucas County Public Library",
       year: "2023",
-      description: "Awarded to only 8 libraries and/or museums in the country.",
+      description: "Awarded to only 8 libraries and/or museums..",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     },
     {
       title: "Google Ad Award Recipient",
       organization: "Multiple",
       year: "2018-Present",
-      description: "Providing $10,000 monthly in ad credit per nonprofit.",
+      description: "Providing $10,000 monthly per nonprofit.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
     },
   ];
 
   return (
     <section>
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
         Awards & Recognition
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -41,7 +41,7 @@ export const Awards = () => {
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-blue-400">{award.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-cyan-400">{award.title}</h3>
               <p className="text-sm text-gray-400 mb-3">
                 {award.organization} • {award.year}
               </p>

@@ -5,7 +5,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 export const Contact = () => {
   return (
     <section id="contact" className="pb-32">
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
         Get in Touch
       </h2>
       <Card className="glass-card max-w-2xl mx-auto">
@@ -26,7 +26,7 @@ export const Contact = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center p-4 hover:scale-105 transition-transform duration-300"
             >
-              <Github className="h-8 w-8 mb-2 text-purple-400" />
+              <Github className="h-8 w-8 mb-2 text-cyan-400" />
               <span className="text-gray-300">GitHub</span>
             </a>
             <a
@@ -35,14 +35,14 @@ export const Contact = () => {
               rel="noopener noreferrer"
               className="flex flex-col items-center p-4 hover:scale-105 transition-transform duration-300"
             >
-              <MessageSquare className="h-8 w-8 mb-2 text-purple-400" />
+              <MessageSquare className="h-8 w-8 mb-2 text-cyan-400" />
               <span className="text-gray-300">Discord</span>
             </a>
             <a
               href="mailto:andy@lechlak.com"
               className="flex flex-col items-center p-4 hover:scale-105 transition-transform duration-300"
             >
-              <Mail className="h-8 w-8 mb-2 text-purple-400" />
+              <Mail className="h-8 w-8 mb-2 text-cyan-400" />
               <span className="text-gray-300">Email</span>
             </a>
           </div>
