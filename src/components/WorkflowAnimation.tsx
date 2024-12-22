@@ -47,7 +47,7 @@ export const WorkflowAnimation = () => {
           y2="50%"
           stroke="currentColor"
           strokeWidth="4"
-          className="workflow-line text-blue-400/30"
+          className="workflow-line text-cyan-400/30"
         />
       </svg>
 
@@ -58,7 +58,7 @@ export const WorkflowAnimation = () => {
             <circle
               r="4"
               fill="currentColor"
-              className="bg-gradient-to-r from-cyan-400 to-blue-400 particle"
+              className="bg-gradient-to-r from-cyan-400 to-cyan-400 particle"
               style={{
                 offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
@@ -66,7 +66,7 @@ export const WorkflowAnimation = () => {
             <circle
               r="4"
               fill="currentColor"
-              className="bg-gradient-to-r from-cyan-400 to-blue-400 particle delay-100"
+              className="bg-gradient-to-r from-cyan-400 to-cyan-400 particle delay-100"
               style={{
                 offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
