@@ -28,15 +28,15 @@ const ParticleNetwork = () => {
 
     // Initialize particles
     const initParticles = () => {
-      const particleCount = 50;
+      const particleCount = 25; // Reduced from 50
       const newParticles: Particle[] = [];
       
       for (let i = 0; i < particleCount; i++) {
         newParticles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
+          vx: (Math.random() - 0.5) * 0.2, // Reduced velocity from 0.5
+          vy: (Math.random() - 0.5) * 0.2, // Reduced velocity from 0.5
         });
       }
       
@@ -68,8 +68,10 @@ const ParticleNetwork = () => {
         ctx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw connections
-        particles.forEach(otherParticle => {
+        // Draw connections (only for 25% of possible connections)
+        particles.forEach((otherParticle, index) => {
+          if (Math.random() > 0.25) return; // Only show 25% of connections
+
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
