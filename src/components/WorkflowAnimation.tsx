@@ -14,17 +14,17 @@ export const WorkflowAnimation = () => {
     {
       icon: Database,
       title: "Data Collection",
-      description: "Gathering and organizing raw data from multiple sources",
+      description: "Gathering and organizing (ETL) raw data from multiple sources.",
     },
     {
       icon: Cpu,
       title: "Processing & Analysis",
-      description: "Advanced algorithms process and analyze data patterns",
+      description: "Advanced algorithms usage for cleaning and data safe rooms.",
     },
     {
       icon: GitBranch,
-      title: "Automated Output",
-      description: "Delivering actionable insights through automated reporting",
+      title: "Trend Analysis",
+      description: "Delivering actionable insights through pattern recognition.",
     },
   ];
 
@@ -46,8 +46,8 @@ export const WorkflowAnimation = () => {
           x2="90%"
           y2="50%"
           stroke="currentColor"
-          strokeWidth="2"
-          className="workflow-line text-purple-400/30"
+          strokeWidth="4"
+          className="workflow-line text-blue-400/30"
         />
       </svg>
 
@@ -58,7 +58,7 @@ export const WorkflowAnimation = () => {
             <circle
               r="4"
               fill="currentColor"
-              className="text-purple-400 particle"
+              className="bg-gradient-to-r from-blue-400 to-cyan-400 particle"
               style={{
                 offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
@@ -66,7 +66,7 @@ export const WorkflowAnimation = () => {
             <circle
               r="4"
               fill="currentColor"
-              className="text-purple-400 particle delay-200"
+              className="bg-gradient-to-r from-blue-400 to-cyan-400 particle delay-100"
               style={{
                 offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
@@ -83,7 +83,7 @@ export const WorkflowAnimation = () => {
             icon={step.icon}
             title={step.title}
             description={step.description}
-            style={{ animationDelay: `${index * 200}ms` }}
+            style={{ animationDelay: `${index * 100}ms` }}
             className={`animate-fade-in ${inView ? 'opacity-100' : 'opacity-0'}`}
           />
         ))}
