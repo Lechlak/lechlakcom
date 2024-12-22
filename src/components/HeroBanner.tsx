@@ -34,6 +34,17 @@ const StarField = () => {
           }}
         />
       ))}
+      {[...Array(5)].map((_, i) => (
+        <div
+          key={`shooting-star-${i}`}
+          className="shooting-star"
+          style={{
+            top: `${Math.random() * 50}%`,
+            left: `${Math.random() * 50}%`,
+            animationDelay: `${Math.random() * 5}s`
+          }}
+        />
+      ))}
     </div>
   );
 };
