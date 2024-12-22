@@ -9,7 +9,7 @@ export const Portfolio = () => {
       image: "./analytics.png"
     },
     {
-      title: "Demographic & Socio-Economic Reporting",
+      title: "Demographics & Socio-Economics",
       description: "Interactive platform for market trend analysis and forecasting",
       tags: ["Python", "SQL", "Tableau"],
       image: "./demographics.png"
@@ -62,7 +62,7 @@ export const Portfolio = () => {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 text-sm rounded-full bg-sky-800/10 text-sky-500"
+                    className="px-3 py-1 text-sm rounded-full bg-sky-500/10 text-cyan-400"
                   >
                     {tag}
                   </span>
