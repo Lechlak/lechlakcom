@@ -11,7 +11,7 @@ export const Experience = () => {
       period: "2011 - Present",
       description: "15 years of analytics expertise driving strategic decisions",
       icon: faUsers,
-      color: "from-[#8B5CF6] to-[#D946EF]"
+      color: "from-teal-500 to-sky-500"
     },
     {
       title: "Project Management",
@@ -19,7 +19,7 @@ export const Experience = () => {
       period: "2011 - Present",
       description: "Leadership & mentoring enhancing talent development",
       icon: faChartLine,
-      color: "from-[#F97316] to-[#D946EF]"
+      color: "from-blue-500 to-cyan-500"
     },
     {
       title: "Strategic Roadmap",
@@ -27,7 +27,7 @@ export const Experience = () => {
       period: "2015 - 2022",
       description: "Led evaluation of three strategic plans with data-driven improvements",
       icon: faBullseye,
-      color: "from-[#0EA5E9] to-[#8B5CF6]"
+      color: "from-teal-500 to-cyan-500"
     },
   ];
 

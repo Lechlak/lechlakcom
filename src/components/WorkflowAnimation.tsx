@@ -19,7 +19,7 @@ export const WorkflowAnimation = () => {
     },
     {
       icon: Cpu,
-      title: "Processing & Analysis",
+      title: "Processing",
       description: "Advanced algorithms usage for cleaning and data safe rooms.",
     },
     {

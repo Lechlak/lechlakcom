@@ -15,7 +15,7 @@ export const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent"
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent"
         >
           About Me
         </motion.h2>
