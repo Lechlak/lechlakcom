@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartLine, faUsers, faBullseye } from '@fortawesome/free-solid-svg-icons';
 
 export const Experience = () => {
   const experiences = [
@@ -8,7 +10,7 @@ export const Experience = () => {
       company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
       description: "15 years of analytics expertise driving strategic decisions",
-      icon: "📊",
+      icon: faChartLine,
       color: "from-[#8B5CF6] to-[#D946EF]"
     },
     {
@@ -16,7 +18,7 @@ export const Experience = () => {
       company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
       description: "Leadership & mentoring enhancing talent development",
-      icon: "👥",
+      icon: faUsers,
       color: "from-[#F97316] to-[#D946EF]"
     },
     {
@@ -24,7 +26,7 @@ export const Experience = () => {
       company: "Toledo Lucas County Public Library",
       period: "2015 - 2022",
       description: "Led evaluation of three strategic plans with data-driven improvements",
-      icon: "🎯",
+      icon: faBullseye,
       color: "from-[#0EA5E9] to-[#8B5CF6]"
     },
   ];
@@ -47,7 +49,9 @@ export const Experience = () => {
             <Card className="glass-card transform hover:scale-[1.02] transition-all duration-300 border-0 shadow-lg hover:shadow-xl">
               <CardContent className="p-8">
                 <div className="flex items-start gap-6">
-                  <div className="text-4xl">{exp.icon}</div>
+                  <div className="text-4xl opacity-80">
+                    <FontAwesomeIcon icon={exp.icon} className={`bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`} />
+                  </div>
                   <div className="flex-1">
                     <div className="flex justify-between items-start mb-4">
                       <div>

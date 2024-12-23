@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 export const Awards = () => {
   const awards = [
@@ -32,22 +33,29 @@ export const Awards = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {awards.map((award, index) => (
-          <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300">
-            <CardContent className="p-6">
-              <div className="w-full h-48 mb-4 overflow-hidden rounded-lg">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+          >
+            <Card className="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <div className="relative h-48">
                 <img 
                   src={award.image} 
                   alt={award.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-sky-500">{award.title}</h3>
-              <p className="text-sm text-gray-400 mb-3">
-                {award.organization} • {award.year}
-              </p>
-              <p className="text-gray-300">{award.description}</p>
-            </CardContent>
-          </Card>
+              <CardContent className="p-6 relative z-10">
+                <h3 className="text-xl font-semibold mb-2 text-sky-500">{award.title}</h3>
+                <p className="text-sm text-gray-400 mb-3">
+                  {award.organization} • {award.year}
+                </p>
+                <p className="text-gray-300">{award.description}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </section>
