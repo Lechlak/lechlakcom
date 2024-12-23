@@ -15,12 +15,12 @@ export const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent"
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent"
         >
           About Me
         </motion.h2>
         <div className="glass-card p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10" />
           <div className="flex flex-col md:flex-row gap-12 items-center relative">
             <motion.div 
               className="flex-1"
