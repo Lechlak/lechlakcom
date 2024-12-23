@@ -10,7 +10,8 @@ interface Particle {
 const ParticleNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [particles, setParticles] = useState<Particle[]>([]);
-
+  const [connectionOpacity, setConnectionOpacity] = useState(0);
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -28,15 +29,15 @@ const ParticleNetwork = () => {
 
     // Initialize particles
     const initParticles = () => {
-      const particleCount = 25; // Reduced from 50
+      const particleCount = 25;
       const newParticles: Particle[] = [];
       
       for (let i = 0; i < particleCount; i++) {
         newParticles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.2, // Reduced velocity from 0.5
-          vy: (Math.random() - 0.5) * 0.2, // Reduced velocity from 0.5
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
         });
       }
       
@@ -45,13 +46,22 @@ const ParticleNetwork = () => {
 
     initParticles();
 
+    // Fade effect timer
+    const fadeInterval = setInterval(() => {
+      setConnectionOpacity(prev => {
+        if (prev <= 0) return 0.1;
+        if (prev >= 1) return 0;
+        return prev + (prev <= 0 ? 0.1 : -0.1);
+      });
+    }, 100);
+
     // Animation loop
     const animate = () => {
       if (!ctx || !canvas) return;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+      ctx.strokeStyle = `rgba(255, 255, 255, ${connectionOpacity * 0.1})`;
 
       // Update and draw particles
       const updatedParticles = particles.map(particle => {
@@ -68,9 +78,9 @@ const ParticleNetwork = () => {
         ctx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw connections (only for 25% of possible connections)
+        // Draw connections
         particles.forEach((otherParticle, index) => {
-          if (Math.random() > 0.25) return; // Only show 25% of connections
+          if (Math.random() > 0.25) return;
 
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
@@ -96,8 +106,9 @@ const ParticleNetwork = () => {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrame);
+      clearInterval(fadeInterval);
     };
-  }, [particles]);
+  }, [particles, connectionOpacity]);
 
   return (
     <canvas
