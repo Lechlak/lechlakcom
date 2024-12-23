@@ -4,15 +4,15 @@ export const Experience = () => {
   const experiences = [
     {
       title: "Customer Experience",
-      company: "Multiple",
+      company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
       description: "Utilizing 15 years of analytics expertise to inform and drive strategic business decisions",
     },
     {
       title: "Project Management",
-      company: "Multiple",
-      period: "2012 - Present",
-      description: "Cultivating leadership, mentoring, and coaching skills to enhance talent development retention for over 14 years",
+      company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
+      period: "2011 - Present",
+      description: "Cultivating leadership, mentoring, and coaching skills to enhance talent development retention for 15 years",
     },
     {
       title: "Strategic Roadmap",
