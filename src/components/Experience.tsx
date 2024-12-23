@@ -1,8 +1,13 @@
+<<<<<<< HEAD
+=======
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faUsers, faBullseye } from '@fortawesome/free-solid-svg-icons';
+>>>>>>> e4b6370c154f7cf2c92b9518bebd5d35d08b88f3
 
+<<<<<<< HEAD
+=======
 export const Experience = () => {
   const experiences = [
     {
@@ -75,3 +80,4 @@ export const Experience = () => {
     </section>
   );
 };
+>>>>>>> e4b6370c154f7cf2c92b9518bebd5d35d08b88f3
