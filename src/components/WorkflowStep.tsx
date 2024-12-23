@@ -21,7 +21,7 @@ export const WorkflowStep = ({
   return (
     <div 
       className={cn(
-        "glass-card p-6 transition-all duration-300",
+        "glass-card p-6 transition-all duration-300 bg-gradient-to-r from-teal-500 to-sky-500",
         isActive ? "scale-105 shadow-lg" : "scale-100",
         className
       )}
@@ -30,7 +30,7 @@ export const WorkflowStep = ({
       <div className="flex items-center gap-4">
         <div className={cn(
           "p-3 rounded-lg transition-colors",
-          isActive ? "bg-gradient-to-r from-teal-500 to-sky-500" : "bg-gray-500/20"
+          isActive ? "bg-gray-300/20" : "bg-gray-500/20"
         )}>
           <Icon className={cn(
             "w-6 h-6 transition-colors",
