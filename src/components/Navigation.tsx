@@ -51,8 +51,8 @@ export const Navigation = () => {
                 duration={500}
                 className={`text-sm font-medium transition-colors cursor-pointer
                   ${activeSection === section.id 
-                    ? 'text-[#8B5CF6] border-b-2 border-[#8B5CF6]' 
-                    : 'text-gray-400 hover:text-[#D946EF]'}`}
+                    ? 'text-sky-500 border-b-2 border-sky-400' 
+                    : 'text-gray-400 hover:text-sky-500'}`}
               >
                 {section.label}
               </Link>
