@@ -30,7 +30,7 @@ export const WorkflowStep = ({
       <div className="flex items-center gap-4">
         <div className={cn(
           "p-3 rounded-lg transition-colors",
-          isActive ? "bg-gray-300/20" : "bg-gray-500/20"
+          isActive ? "bg-gradient-to-r from-teal-500 to-sky-500" : "bg-gray-500/20"
         )}>
           <Icon className={cn(
             "w-6 h-6 transition-colors",

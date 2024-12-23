@@ -19,7 +19,7 @@ export const Experience = () => {
       period: "2011 - Present",
       description: "Leadership & mentoring enhancing talent development",
       icon: faChartLine,
-      color: "from-blue-500 to-cyan-500"
+      color: "from-teal-500 to-sky-500"
     },
     {
       title: "Strategic Roadmap",
@@ -27,7 +27,7 @@ export const Experience = () => {
       period: "2015 - 2022",
       description: "Led evaluation of three strategic plans with data-driven improvements",
       icon: faBullseye,
-      color: "from-teal-500 to-cyan-500"
+      color: "from-teal-500 to-sky-500"
     },
   ];
 
@@ -46,7 +46,7 @@ export const Experience = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="glass-card overflow-hidden transform hover:scale-[1.02] transition-all duration-300 border-0 shadow-lg hover:shadow-xl rounded-lg">
+            <Card className="glass-card overflow-hidden transform hover:scale-[1.02] transition-all duration-300 border-0 shadow-lg hover:shadow-xl rounded-lg bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10">
               <CardContent className="p-8">
                 <div className="flex items-start gap-6">
                   <div className="text-4xl opacity-80">

@@ -37,7 +37,7 @@ export const Contact = () => {
         Get in Touch
       </motion.h2>
       <Card className="glass-card max-w-2xl mx-auto relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-sky-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10" />
         <CardContent className="p-12 relative">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
