@@ -46,7 +46,7 @@ export const Experience = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="glass-card transform hover:scale-[1.02] transition-all duration-300 border-0 shadow-lg hover:shadow-xl">
+            <Card className="glass-card overflow-hidden transform hover:scale-[1.02] transition-all duration-300 border-0 shadow-lg hover:shadow-xl rounded-lg">
               <CardContent className="p-8">
                 <div className="flex items-start gap-6">
                   <div className="text-4xl opacity-80">

@@ -38,21 +38,22 @@ export const Awards = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
+            className="h-full"
           >
-            <Card className="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <Card className="glass-card overflow-hidden hover:scale-[1.02] transition-transform duration-300 h-full flex flex-col">
               <div className="relative h-48">
                 <img 
                   src={award.image} 
                   alt={award.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
-              <CardContent className="p-6 relative z-10">
+              <CardContent className="p-6 flex-1 flex flex-col">
                 <h3 className="text-xl font-semibold mb-2 text-sky-500">{award.title}</h3>
                 <p className="text-sm text-gray-400 mb-3">
                   {award.organization} • {award.year}
                 </p>
-                <p className="text-gray-300">{award.description}</p>
+                <p className="text-gray-300 flex-1">{award.description}</p>
               </CardContent>
             </Card>
           </motion.div>

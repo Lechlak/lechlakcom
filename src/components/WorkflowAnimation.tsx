@@ -40,11 +40,21 @@ export const WorkflowAnimation = () => {
 
   return (
     <div ref={ref} className="relative max-w-4xl mx-auto py-12">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10"
-      />
+      {inView && (
+        <>
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="shooting-star"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`
+              }}
+            />
+          ))}
+        </>
+      )}
 
       <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-0">
         <motion.line
@@ -60,37 +70,6 @@ export const WorkflowAnimation = () => {
           transition={{ duration: 2, ease: "easeInOut" }}
         />
       </svg>
-
-      {inView && (
-        <>
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute h-1 w-1 bg-cyan-400/30 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  scale: [0, 1, 0],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-          </motion.div>
-        </>
-      )}
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, index) => (

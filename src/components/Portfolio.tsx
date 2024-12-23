@@ -47,18 +47,18 @@ export const Portfolio = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden">
-            <div className="h-48 overflow-hidden">
+          <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col">
+            <div className="relative h-48">
               <img 
                 src={project.image} 
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
-            <CardContent className="p-6">
+            <CardContent className="p-6 flex-1 flex flex-col">
               <h3 className="text-xl font-semibold mb-3 text-sky-500">{project.title}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
+              <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
