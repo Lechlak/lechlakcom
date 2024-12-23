@@ -1,9 +1,11 @@
 import { Link } from "react-scroll";
 import { ThemeToggle } from "./ThemeToggle";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const [scrolled, setScrolled] = useState(false);
 
   const sections = [
     { id: "hero", label: "Home" },
@@ -30,6 +32,8 @@ export const Navigation = () => {
       if (currentSection) {
         setActiveSection(currentSection.id);
       }
+
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -37,7 +41,13 @@ export const Navigation = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/40">
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-background/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center justify-center space-x-8">
@@ -49,10 +59,7 @@ export const Navigation = () => {
                 smooth={true}
                 offset={-64}
                 duration={500}
-                className={`text-sm font-medium transition-colors cursor-pointer
-                  ${activeSection === section.id 
-                    ? 'text-sky-500 border-b-2 border-sky-400' 
-                    : 'text-gray-400 hover:text-sky-500'}`}
+                className={`nav-link ${activeSection === section.id ? 'active text-sky-500' : 'text-gray-400'}`}
               >
                 {section.label}
               </Link>
@@ -61,6 +68,6 @@ export const Navigation = () => {
           <ThemeToggle />
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };

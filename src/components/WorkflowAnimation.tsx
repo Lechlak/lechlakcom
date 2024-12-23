@@ -46,44 +46,64 @@ export const WorkflowAnimation = () => {
             <motion.div
               key={i}
               className="shooting-star"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: [0, 1, 0] }}
+              transition={{
+                duration: 2,
+                delay: i * 0.2,
+                repeat: Infinity,
+                repeatDelay: 3
+              }}
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`
+              }}
+            />
+          ))}
+          {[...Array(10)].map((_, i) => (
+            <motion.div
+              key={`sparkle-${i}`}
+              className="sparkle"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: [0, 1, 0], opacity: [0, 1, 0], rotate: 360 }}
+              transition={{
+                duration: 1.5,
+                delay: i * 0.3,
+                repeat: Infinity,
+                repeatDelay: 2
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
               }}
             />
           ))}
         </>
       )}
 
-      <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-0">
-        <motion.line
-          x1="10%"
-          y1="50%"
-          x2="90%"
-          y2="50%"
-          stroke="currentColor"
-          strokeWidth="4"
-          className="workflow-line text-cyan-400/30"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
-      </svg>
-
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5 }}
+        className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8"
+      >
         {steps.map((step, index) => (
-          <WorkflowStep
+          <motion.div
             key={index}
-            isActive={activeStep === index}
-            icon={step.icon}
-            title={step.title}
-            description={step.description}
-            style={{ animationDelay: `${index * 100}ms` }}
-            className={`animate-fade-in ${inView ? 'opacity-100' : 'opacity-0'}`}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+          >
+            <WorkflowStep
+              isActive={activeStep === index}
+              icon={step.icon}
+              title={step.title}
+              description={step.description}
+              className="card-hover-effect"
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
