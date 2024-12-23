@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-=======
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faUsers, faBullseye } from '@fortawesome/free-solid-svg-icons';
->>>>>>> e4b6370c154f7cf2c92b9518bebd5d35d08b88f3
 
-<<<<<<< HEAD
-=======
 export const Experience = () => {
   const experiences = [
     {
@@ -15,7 +10,7 @@ export const Experience = () => {
       company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
       description: "15 years of analytics expertise driving strategic decisions",
-      icon: faChartLine,
+      icon: faUsers,
       color: "from-[#8B5CF6] to-[#D946EF]"
     },
     {
@@ -23,7 +18,7 @@ export const Experience = () => {
       company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
       description: "Leadership & mentoring enhancing talent development",
-      icon: faUsers,
+      icon: faChartLine,
       color: "from-[#F97316] to-[#D946EF]"
     },
     {
@@ -80,4 +75,3 @@ export const Experience = () => {
     </section>
   );
 };
->>>>>>> e4b6370c154f7cf2c92b9518bebd5d35d08b88f3

@@ -9,19 +9,19 @@ export const Contact = () => {
       icon: Github,
       label: "GitHub",
       href: "https://github.com/Lechlak",
-      color: "group-hover:text-[#8B5CF6]"
+      color: "group-hover:text-sky-300"
     },
     {
       icon: MessageSquare,
       label: "Discord",
       href: "https://discord.com/users/225670301084680194",
-      color: "group-hover:text-[#D946EF]"
+      color: "group-hover:text-sky-500"
     },
     {
       icon: Mail,
       label: "Email",
       href: "mailto:andy@lechlak.com",
-      color: "group-hover:text-[#F97316]"
+      color: "group-hover:text-sky-700"
     }
   ];
 

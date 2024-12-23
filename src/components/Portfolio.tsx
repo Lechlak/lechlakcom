@@ -64,7 +64,7 @@ export const Portfolio = () => {
                     key={tagIndex}
                     className="px-3 py-1 text-sm rounded-full bg-sky-500/10 text-cyan-400"
                   >
-                    {tag}
+                    #{tag}
                   </span>
                 ))}
               </div>

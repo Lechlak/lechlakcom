@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 export const About = () => {
   const stats = [
-    { value: "15+", label: "Years Experience", color: "text-[#8B5CF6]" },
-    { value: "10+", label: "Years married", color: "text-[#D946EF]" },
-    { value: "3", label: "Children", color: "text-[#F97316]" },
-    { value: "1", label: "Puppy", color: "text-[#0EA5E9]" },
+    { value: "15+", label: "Years Experience", color: "text-teal-400" },
+    { value: "10+", label: "Years married", color: "text-cyan-400" },
+    { value: "3", label: "Children", color: "text-sky-400" },
+    { value: "1", label: "Puppy", color: "text-blue-400" },
   ];
 
   return (

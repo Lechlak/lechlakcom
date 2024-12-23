@@ -29,7 +29,7 @@ const ParticleNetwork = () => {
 
     // Initialize particles
     const initParticles = () => {
-      const particleCount = 25;
+      const particleCount = 5;
       const newParticles: Particle[] = [];
       
       for (let i = 0; i < particleCount; i++) {

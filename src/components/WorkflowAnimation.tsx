@@ -15,7 +15,7 @@ export const WorkflowAnimation = () => {
     {
       icon: Database,
       title: "Data Collection",
-      description: "Gathering and organizing (ETL) raw data from multiple sources.",
+      description: "Extracting and organizing data from multiple sources.",
     },
     {
       icon: Cpu,
@@ -49,7 +49,7 @@ export const WorkflowAnimation = () => {
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`
+                animationDelay: `${Math.random() * 2}s`
               }}
             />
           ))}
