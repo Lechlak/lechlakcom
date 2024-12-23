@@ -9,7 +9,7 @@ export const Contact = () => {
       icon: Github,
       label: "GitHub",
       href: "https://github.com/Lechlak",
-      color: "group-hover:text-sky-300"
+      color: "group-hover:text-sky-500"
     },
     {
       icon: MessageSquare,
@@ -21,13 +21,13 @@ export const Contact = () => {
       icon: Mail,
       label: "Email",
       href: "mailto:andy@lechlak.com",
-      color: "group-hover:text-sky-700"
+      color: "group-hover:text-sky-500"
     }
   ];
 
   return (
     <section id="contact" className="py-32 relative">
-      <div className="absolute inset-0 bg-gradient-to-t from-purple-500/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-sky-500/10 via-transparent to-transparent" />
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
