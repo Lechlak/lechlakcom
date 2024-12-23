@@ -1,7 +1,10 @@
 import { Link } from "react-scroll";
 import { ThemeToggle } from "./ThemeToggle";
+import { useEffect, useState } from "react";
 
 export const Navigation = () => {
+  const [activeSection, setActiveSection] = useState("hero");
+
   const sections = [
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
@@ -10,6 +13,28 @@ export const Navigation = () => {
     { id: "awards", label: "Awards" },
     { id: "contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sectionElements = sections.map(section => ({
+        id: section.id,
+        element: document.getElementById(section.id)
+      }));
+
+      const currentSection = sectionElements.find(section => {
+        if (!section.element) return false;
+        const rect = section.element.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection.id);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/40">
@@ -24,8 +49,10 @@ export const Navigation = () => {
                 smooth={true}
                 offset={-64}
                 duration={500}
-                className="text-sm font-medium text-gray-400 hover:text-cyan-500 cursor-pointer transition-colors"
-                activeClass="text-cyan-400"
+                className={`text-sm font-medium transition-colors cursor-pointer
+                  ${activeSection === section.id 
+                    ? 'text-[#8B5CF6] border-b-2 border-[#8B5CF6]' 
+                    : 'text-gray-400 hover:text-[#D946EF]'}`}
               >
                 {section.label}
               </Link>

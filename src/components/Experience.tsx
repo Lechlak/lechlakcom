@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 export const Experience = () => {
   const experiences = [
@@ -6,41 +7,65 @@ export const Experience = () => {
       title: "Customer Experience",
       company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
-      description: "Utilizing 15 years of analytics expertise to inform and drive strategic business decisions",
+      description: "15 years of analytics expertise driving strategic decisions",
+      icon: "📊",
+      color: "from-[#8B5CF6] to-[#D946EF]"
     },
     {
       title: "Project Management",
       company: "The Image Group, Rolled Alloys, Toledo Lucas County Public Library",
       period: "2011 - Present",
-      description: "Cultivating leadership, mentoring, and coaching skills to enhance talent development retention for 15 years",
+      description: "Leadership & mentoring enhancing talent development",
+      icon: "👥",
+      color: "from-[#F97316] to-[#D946EF]"
     },
     {
       title: "Strategic Roadmap",
       company: "Toledo Lucas County Public Library",
       period: "2015 - 2022",
-      description: "Led the evaluation of three stategic plans, assessing their success and developing data-driven recommendations for continued improvement",
+      description: "Led evaluation of three strategic plans with data-driven improvements",
+      icon: "🎯",
+      color: "from-[#0EA5E9] to-[#8B5CF6]"
     },
   ];
 
   return (
-    <section>
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-500 to-sky-500 bg-clip-text text-transparent">
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent" />
+      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] bg-clip-text text-transparent">
         Experience
       </h2>
-      <div className="space-y-6">
+      <div className="grid gap-8">
         {experiences.map((exp, index) => (
-          <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300">
-            <CardContent className="p-6">
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-cyan-500">{exp.title}</h3>
-                  <p className="text-gray-400">{exp.company}</p>
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <Card className="glass-card transform hover:scale-[1.02] transition-all duration-300 border-0 shadow-lg hover:shadow-xl">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-6">
+                  <div className="text-4xl">{exp.icon}</div>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className={`text-2xl font-bold bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`}>
+                          {exp.title}
+                        </h3>
+                        <p className="text-gray-400 mt-1">{exp.company}</p>
+                      </div>
+                      <span className="text-sm text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full">
+                        {exp.period}
+                      </span>
+                    </div>
+                    <p className="text-gray-300 text-lg">{exp.description}</p>
+                  </div>
                 </div>
-                <span className="text-sm text-gray-500">{exp.period}</span>
-              </div>
-              <p className="text-gray-300">{exp.description}</p>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </section>
