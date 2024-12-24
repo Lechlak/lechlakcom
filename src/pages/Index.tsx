@@ -4,7 +4,6 @@ import { Experience } from "@/components/Experience";
 import { Portfolio } from "@/components/Portfolio";
 import { Awards } from "@/components/Awards";
 import { Contact } from "@/components/Contact";
-import { WorkflowAnimation } from "@/components/WorkflowAnimation";
 import { Navigation } from "@/components/Navigation";
 import { lazy, Suspense } from 'react';
 
