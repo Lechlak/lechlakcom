@@ -7,6 +7,7 @@ import { debounce } from "lodash";
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
 
   const sections = useMemo(
     () => [
@@ -50,6 +51,10 @@ export const Navigation = () => {
     };
   }, [handleScroll]);
 
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -60,21 +65,32 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Triangle logo with AL */}
+          {/* Triangle logo with transparent text */}
           <div className="flex-shrink-0">
             <div
-              className="w-10 h-10 bg-transparent border-l-8 border-t-8 border-[#002b45] relative"
+              className="relative w-10 h-10 border-l-8 border-t-8 border-[#002b45]"
               style={{
                 clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
               }}
             >
-              <span className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs font-bold">
+              <span className="absolute inset-0 flex items-center justify-center text-transparent font-bold text-xs">
                 AL
               </span>
             </div>
           </div>
 
-          {/* Navigation Links */}
+          {/* Hamburger Menu Icon for Mobile */}
+          <div className="md:hidden flex items-center">
+            <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
+              {menuOpen ? (
+                <span className="material-icons">close</span>
+              ) : (
+                <span className="material-icons">menu</span>
+              )}
+            </button>
+          </div>
+
+          {/* Navigation Links for Desktop */}
           <div className="hidden md:flex items-center justify-center space-x-8">
             {sections.map((section) => (
               <Link
@@ -98,37 +114,39 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="flex flex-col items-center justify-between md:hidden">
-          {/* Mobile Triangle Logo */}
-          <div className="w-10 h-10 bg-transparent border-l-8 border-t-8 border-[#002b45] relative mx-auto my-4"
-            style={{
-              clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
-            }}
-          >
-            <span className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs font-bold">
-              AL
-            </span>
-          </div>
+        {menuOpen && (
+          <div className="flex flex-col items-center justify-center md:hidden">
+            <div className="relative w-10 h-10 border-l-8 border-t-8 border-[#002b45] my-4"
+              style={{
+                clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
+              }}
+            >
+              <span className="absolute inset-0 flex items-center justify-center text-transparent font-bold text-xs">
+                AL
+              </span>
+            </div>
 
-          {/* Navigation Links */}
-          <div className="flex flex-col items-center space-y-4">
-            {sections.map((section) => (
-              <Link
-                key={section.id}
-                to={section.id}
-                spy={true}
-                smooth={true}
-                offset={-64}
-                duration={500}
-                className={`nav-link ${
-                  activeSection === section.id ? "active text-sky-500" : "text-gray-400"
-                }`}
-              >
-                {section.label}
-              </Link>
-            ))}
+            {/* Mobile Navigation Links */}
+            <div className="flex flex-col items-center space-y-4">
+              {sections.map((section) => (
+                <Link
+                  key={section.id}
+                  to={section.id}
+                  spy={true}
+                  smooth={true}
+                  offset={-64}
+                  duration={500}
+                  className={`nav-link ${
+                    activeSection === section.id ? "active text-sky-500" : "text-gray-400"
+                  }`}
+                  onClick={toggleMenu} // Close the menu on link click
+                >
+                  {section.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </motion.nav>
   );
