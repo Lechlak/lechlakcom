@@ -52,14 +52,14 @@ export const Experience = () => {
              <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col">
             <div className="relative h-48">
               <img 
-                src={experiences.image} 
-                alt={experiences.title}
+                src={exp.image} 
+                alt={exp.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <CardContent className="p-6 flex-1 flex flex-col">
-              <h3 className="text-xl font-semibold mb-3 text-sky-500">{experiences.title}</h3>
-              <p className="text-gray-300 mb-4 flex-1">{experiences.description}</p>
+              <h3 className="text-xl font-semibold mb-3 text-sky-500">{exp.title}</h3>
+              <p className="text-gray-300 mb-4 flex-1">{exp.description}</p>
             </CardContent>
           </Card>
           </motion.div>
