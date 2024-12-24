@@ -37,7 +37,7 @@ export const Experience = () => {
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
         Experience
       </h2>
-      <div className="grid gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
