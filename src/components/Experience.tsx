@@ -11,7 +11,8 @@ export const Experience = () => {
       period: "2011 - Present",
       description: "15 years of analytics expertise driving strategic decisions",
       icon: faUsers,
-      color: "from-teal-500 to-sky-500"
+      color: "from-teal-500 to-sky-500",
+      image: "./no-monkey-business.png"
     },
     {
       title: "Project Management",
@@ -19,7 +20,8 @@ export const Experience = () => {
       period: "2011 - Present",
       description: "Leadership & mentoring enhancing talent development",
       icon: faChartLine,
-      color: "from-teal-500 to-sky-500"
+      color: "from-teal-500 to-sky-500",
+      image: "./gantt-chart.png"
     },
     {
       title: "Strategic Roadmap",
@@ -27,7 +29,8 @@ export const Experience = () => {
       period: "2015 - 2022",
       description: "Led evaluation of three strategic plans with data-driven improvements",
       icon: faBullseye,
-      color: "from-teal-500 to-sky-500"
+      color: "from-teal-500 to-sky-500",
+      image: "./demographic-heatmap.png"
     },
   ];
 
@@ -46,29 +49,19 @@ export const Experience = () => {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="glass-card hover:scale-[1.01] transition-transform duration-300 overflow-hidden h-full flex flex-col bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-6">
-                  <div className="text-4xl opacity-80">
-                    <FontAwesomeIcon icon={exp.icon} className={`bg-gradient-to-r text-gray-500 bg-clip-text text-transparent`} />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className={`text-2xl font-bold bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`}>
-                          {exp.title}
-                        </h3>
-                        <p className="text-gray-400 mt-1">{exp.company}</p>
-                      </div>
-                      <span className="text-sm text-gray-500 bg-gray-800/50 px-3 py-1 rounded-full">
-                        {exp.period}
-                      </span>
-                    </div>
-                    <p className="text-gray-300 text-lg">{exp.description}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+             <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col">
+            <div className="relative h-48">
+              <img 
+                src={experiences.image} 
+                alt={experiences.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <CardContent className="p-6 flex-1 flex flex-col">
+              <h3 className="text-xl font-semibold mb-3 text-sky-500">{experiences.title}</h3>
+              <p className="text-gray-300 mb-4 flex-1">{experiences.description}</p>
+            </CardContent>
+          </Card>
           </motion.div>
         ))}
       </div>
