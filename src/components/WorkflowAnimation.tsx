@@ -7,7 +7,7 @@ export const WorkflowAnimation = () => {
   const [activeStep, setActiveStep] = useState(0);
   const { ref, inView } = useInView({
     threshold: 0.5,
-    triggerOnce: true,
+    triggerOnce: false,
   });
 
   const steps = [
@@ -35,7 +35,9 @@ export const WorkflowAnimation = () => {
       }, 3000);
       return () => clearInterval(interval);
     }
-  }, [inView, steps.length]);
+  }, [inView]);
+
+  const lightPosition = `${(activeStep / steps.length) * 100}%`;
 
   return (
     <div ref={ref} className="relative max-w-4xl mx-auto py-12">
@@ -44,15 +46,19 @@ export const WorkflowAnimation = () => {
       
       {/* Pulsing light effect */}
       {inView && (
-        <div 
+        <div
           className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-transparent"
           style={{
-            left: '10%',
-            animation: 'moveLight 3s linear infinite',
+            left: lightPosition,
             filter: 'blur(4px)',
           }}
         />
       )}
+
+      {/* Accessible step announcement */}
+      <div aria-live="polite" className="sr-only">
+        {`Step ${activeStep + 1}: ${steps[activeStep].title}`}
+      </div>
 
       {/* Workflow steps */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
