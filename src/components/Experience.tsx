@@ -42,6 +42,7 @@ export const Experience = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {experiences.map((exp, index) => (
+
              <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col">
             <div className="relative h-48">
               <img 
@@ -55,7 +56,7 @@ export const Experience = () => {
               <p className="text-gray-300 mb-4 flex-1">{exp.description}</p>
             </CardContent>
           </Card>
-          </motion.div>
+
         ))}
       </div>
     </section>
