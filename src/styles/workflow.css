@@ -1,24 +1,47 @@
+.light-pulse {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgb(59, 130, 246) 0%, transparent 100%);
+  filter: blur(4px);
+  will-change: transform, opacity;
+  animation: moveLight 3s linear infinite;
+}
+
 @keyframes moveLight {
   0% {
-    left: 10%;
+    transform: translate(10%, -50%);
     opacity: 0;
   }
   20% {
+    transform: translate(30%, -50%);
     opacity: 1;
   }
   80% {
+    transform: translate(70%, -50%);
     opacity: 1;
   }
   100% {
-    left: 90%;
+    transform: translate(90%, -50%);
     opacity: 0;
   }
 }
 
 .workflow-step {
-  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  will-change: transform, opacity;
 }
 
-.workflow-step:hover {
-  transform: translateY(-4px);
+.workflow-step-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.workflow-step[data-active="true"] {
+  transform: translateY(-8px);
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Database, GitBranch, Cpu } from 'lucide-react';
 import { WorkflowStep } from './WorkflowStep';
 import { useInView } from 'react-intersection-observer';
@@ -28,30 +28,29 @@ export const WorkflowAnimation = () => {
     },
   ];
 
-  useEffect(() => {
+  const updateActiveStep = useCallback(() => {
     if (inView) {
-      const interval = setInterval(() => {
-        setActiveStep((prev) => (prev + 1) % steps.length);
-      }, 3000);
-      return () => clearInterval(interval);
+      setActiveStep((prev) => (prev + 1) % steps.length);
     }
-  }, [inView]);
+  }, [inView, steps.length]);
 
-  const lightPosition = `${(activeStep / steps.length) * 100}%`;
+  useEffect(() => {
+    if (!inView) return;
+    
+    const interval = setInterval(updateActiveStep, 3000);
+    return () => clearInterval(interval);
+  }, [inView, updateActiveStep]);
 
   return (
     <div ref={ref} className="relative max-w-4xl mx-auto py-12">
       {/* Assembly line road background */}
-      <div className="absolute top-1/2 left-0 w-full h-16 -translate-y-1/2 bg-gray-800 rounded-full opacity-10" />
+      <div className="absolute top-1/2 left-0 w-full h-16 -translate-y-1/2 bg-gray-800/10 rounded-full" />
       
-      {/* Pulsing light effect */}
+      {/* Optimized pulsing light effect */}
       {inView && (
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-transparent"
-          style={{
-            left: lightPosition,
-            filter: 'blur(4px)',
-          }}
+          className="light-pulse"
+          aria-hidden="true"
         />
       )}
 
@@ -69,11 +68,7 @@ export const WorkflowAnimation = () => {
             icon={step.icon}
             title={step.title}
             description={step.description}
-            style={{
-              transform: `translateY(${activeStep === index ? '-8px' : '0'})`,
-              transition: 'transform 0.3s ease-in-out',
-            }}
-            className={`animate-fade-in ${inView ? 'opacity-100' : 'opacity-0'}`}
+            className={`workflow-step ${inView ? 'workflow-step-visible' : ''}`}
           />
         ))}
       </div>
