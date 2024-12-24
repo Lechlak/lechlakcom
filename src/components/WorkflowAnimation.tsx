@@ -39,42 +39,22 @@ export const WorkflowAnimation = () => {
 
   return (
     <div ref={ref} className="relative max-w-4xl mx-auto py-12">
-      <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-0">
-        <line
-          x1="10%"
-          y1="50%"
-          x2="90%"
-          y2="50%"
-          stroke="currentColor"
-          strokeWidth="2"
-          className="workflow-line text-purple-400/30"
-        />
-      </svg>
-
-      {/* Animated particles */}
+      {/* Assembly line road background */}
+      <div className="absolute top-1/2 left-0 w-full h-16 -translate-y-1/2 bg-gray-800 rounded-full opacity-10" />
+      
+      {/* Pulsing light effect */}
       {inView && (
-        <>
-          <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-1">
-            <circle
-              r="4"
-              fill="currentColor"
-              className="text-purple-400 particle"
-              style={{
-                offsetPath: "path('M 10% 50% L 90% 50%')",
-              }}
-            />
-            <circle
-              r="4"
-              fill="currentColor"
-              className="text-purple-400 particle delay-200"
-              style={{
-                offsetPath: "path('M 10% 50% L 90% 50%')",
-              }}
-            />
-          </svg>
-        </>
+        <div 
+          className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-blue-400 to-transparent"
+          style={{
+            left: '10%',
+            animation: 'moveLight 3s linear infinite',
+            filter: 'blur(4px)',
+          }}
+        />
       )}
 
+      {/* Workflow steps */}
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, index) => (
           <WorkflowStep
@@ -83,7 +63,10 @@ export const WorkflowAnimation = () => {
             icon={step.icon}
             title={step.title}
             description={step.description}
-            style={{ animationDelay: `${index * 200}ms` }}
+            style={{
+              transform: `translateY(${activeStep === index ? '-8px' : '0'})`,
+              transition: 'transform 0.3s ease-in-out',
+            }}
             className={`animate-fade-in ${inView ? 'opacity-100' : 'opacity-0'}`}
           />
         ))}

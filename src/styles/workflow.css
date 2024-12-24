@@ -1,0 +1,24 @@
+@keyframes moveLight {
+  0% {
+    left: 10%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 90%;
+    opacity: 0;
+  }
+}
+
+.workflow-step {
+  transition: all 0.3s ease-in-out;
+}
+
+.workflow-step:hover {
+  transform: translateY(-4px);
+}
