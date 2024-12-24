@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Database, GitBranch, Cpu } from 'lucide-react';
 import { WorkflowStep } from './WorkflowStep';
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
 
 export const WorkflowAnimation = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -15,17 +14,17 @@ export const WorkflowAnimation = () => {
     {
       icon: Database,
       title: "Data Collection",
-      description: "Extracting and organizing data from multiple sources.",
+      description: "Gathering and organizing raw data from multiple sources",
     },
     {
       icon: Cpu,
-      title: "Processing",
-      description: "Advanced algorithms usage for cleaning and data safe rooms.",
+      title: "Processing & Analysis",
+      description: "Advanced algorithms process and analyze data patterns",
     },
     {
       icon: GitBranch,
-      title: "Trend Analysis",
-      description: "Delivering actionable insights through pattern recognition.",
+      title: "Automated Output",
+      description: "Delivering actionable insights through automated reporting",
     },
   ];
 
@@ -40,70 +39,55 @@ export const WorkflowAnimation = () => {
 
   return (
     <div ref={ref} className="relative max-w-4xl mx-auto py-12">
+      <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-0">
+        <line
+          x1="10%"
+          y1="50%"
+          x2="90%"
+          y2="50%"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="workflow-line text-purple-400/30"
+        />
+      </svg>
+
+      {/* Animated particles */}
       {inView && (
         <>
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="shooting-star"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: [0, 1, 0] }}
-              transition={{
-                duration: 2,
-                delay: i * 0.2,
-                repeat: Infinity,
-                repeatDelay: 3
-              }}
+          <svg className="absolute top-1/2 left-0 w-full h-1 -translate-y-1/2 z-1">
+            <circle
+              r="4"
+              fill="currentColor"
+              className="text-purple-400 particle"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
             />
-          ))}
-          {[...Array(10)].map((_, i) => (
-            <motion.div
-              key={`sparkle-${i}`}
-              className="sparkle"
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: [0, 1, 0], opacity: [0, 1, 0], rotate: 360 }}
-              transition={{
-                duration: 1.5,
-                delay: i * 0.3,
-                repeat: Infinity,
-                repeatDelay: 2
-              }}
+            <circle
+              r="4"
+              fill="currentColor"
+              className="text-purple-400 particle delay-200"
               style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
+                offsetPath: "path('M 10% 50% L 90% 50%')",
               }}
             />
-          ))}
+          </svg>
         </>
       )}
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-        className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8"
-      >
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, index) => (
-          <motion.div
+          <WorkflowStep
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <WorkflowStep
-              isActive={activeStep === index}
-              icon={step.icon}
-              title={step.title}
-              description={step.description}
-              className="card-hover-effect"
-            />
-          </motion.div>
+            isActive={activeStep === index}
+            icon={step.icon}
+            title={step.title}
+            description={step.description}
+            style={{ animationDelay: `${index * 200}ms` }}
+            className={`animate-fade-in ${inView ? 'opacity-100' : 'opacity-0'}`}
+          />
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
