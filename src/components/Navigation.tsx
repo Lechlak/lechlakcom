@@ -1,23 +1,24 @@
 import { Link } from "react-scroll";
 import { ThemeToggle } from "./ThemeToggle";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
+import { debounce } from "lodash";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
 
-  const sections = [
+  const sections = useMemo(() => [
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "portfolio", label: "Portfolio" },
     { id: "awards", label: "Awards" },
     { id: "contact", label: "Contact" },
-  ];
+  ], []);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  const handleScroll = useCallback(
+    debounce(() => {
       const sectionElements = sections.map(section => ({
         id: section.id,
         element: document.getElementById(section.id)
@@ -34,17 +35,23 @@ export const Navigation = () => {
       }
 
       setScrolled(window.scrollY > 20);
-    };
+    }, 100),
+    [sections]
+  );
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      handleScroll.cancel();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
 
   return (
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
         scrolled ? 'bg-background/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
       }`}
     >
