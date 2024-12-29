@@ -91,13 +91,14 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="relative flex items-center">
-            <div
-                className="w-4 h-4 bg-amber-400 transform rotating-icon triforce"
-              />
-              <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
-            </div>
-          </div>
+  <div className="relative flex items-center">
+    <div
+      className="w-12 h-12 bg-amber-400 transform rotating-icon triforce"
+    />
+    <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
+  </div>
+</div>
+
 
           {/* Hamburger Menu Icon for Mobile */}
           <div className="md:hidden flex items-center">
