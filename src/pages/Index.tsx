@@ -6,9 +6,6 @@ import { Awards } from "@/components/Awards";
 import { Contact } from "@/components/Contact";
 import { WorkflowAnimation } from "@/components/WorkflowAnimation";
 import { Navigation } from "@/components/Navigation";
-import { lazy, Suspense } from 'react';
-
-const LazyWorkflowAnimation = lazy(() => import('@/components/WorkflowAnimation').then(module => ({ default: module.WorkflowAnimation })));
 
 const Index = () => {
   return (
@@ -34,9 +31,7 @@ const Index = () => {
               Experience a seamless journey from data collection to automated results through our advanced workflow system.
             </p>
           </div>
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyWorkflowAnimation />
-          </Suspense>
+          <WorkflowAnimation />
         </section>
         <Portfolio />
         <div id="awards">
