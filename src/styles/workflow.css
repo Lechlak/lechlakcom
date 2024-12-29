@@ -8,7 +8,7 @@
   background: linear-gradient(90deg, rgb(59, 130, 246) 0%, transparent 100%);
   filter: blur(4px);
   will-change: transform, opacity;
-  animation: moveLight 3s linear infinite;
+  animation: moveLight 2s linear infinite;
 }
 
 @keyframes moveLight {

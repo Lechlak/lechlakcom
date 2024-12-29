@@ -18,12 +18,12 @@ export const WorkflowAnimation = () => {
     },
     {
       icon: Cpu,
-      title: "Processing & Analysis",
-      description: "Advanced algorithms process and analyze data patterns",
+      title: "Processing",
+      description: "Advanced algorithms process and anonymize data clean rooms",
     },
     {
       icon: GitBranch,
-      title: "Automated Output",
+      title: "Analysis Output",
       description: "Delivering actionable insights through automated reporting",
     },
   ];
