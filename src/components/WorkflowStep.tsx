@@ -31,7 +31,7 @@ export const WorkflowStep = ({
         )}>
           <Icon className={cn(
             "w-6 h-6 transition-colors",
-            isActive ? "text-teal-400" : "text-gray-400"
+            isActive ? "text-cyan-700" : "text-gray-400"
           )} />
         </div>
         <div>
