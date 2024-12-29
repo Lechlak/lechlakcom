@@ -23,13 +23,11 @@ export const Navigation = () => {
 
   const handleScroll = useCallback(
     debounce(() => {
-      // Map sections to their DOM elements
       const sectionElements = sections.map((section) => ({
         id: section.id,
         element: document.getElementById(section.id),
       }));
   
-      // Find the currently active section based on scroll position
       const currentSection = sectionElements.find((section) => {
         if (!section.element) return false;
         const rect = section.element.getBoundingClientRect();
@@ -40,18 +38,32 @@ export const Navigation = () => {
         setActiveSection(currentSection.id);
       }
   
-      // Adjust the rotation of the icon
-      const rotation = window.scrollY / 5; // Adjust divisor to control speed
-      const icon = document.querySelector(".rotating-icon"); // Ensure this class is applied to your icon
-      if (icon) {
-        icon.style.transform = `rotate(${rotation}deg)`;
-      }
-  
-      // Set the scrolled state
       setScrolled(window.scrollY > 20);
     }, 100),
     [sections]
   );
+  
+  const handleInstantScroll = useCallback(() => {
+    const rotation = window.scrollY / 5;
+    const icon = document.querySelector(".rotating-icon");
+    if (icon) {
+      icon.style.transform = `rotate(${rotation}deg)`;
+    }
+  }, []);
+  
+  useEffect(() => {
+    const onScroll = () => {
+      handleScroll();
+      handleInstantScroll();
+    };
+  
+    window.addEventListener("scroll", onScroll);
+  
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [handleScroll, handleInstantScroll]);
+  
   
   
 
