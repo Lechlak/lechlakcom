@@ -74,7 +74,7 @@ export const Navigation = () => {
                   clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
                 }}
               />
-              <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
+              <span className="ml-2 text-xl font-bold text-sky-500">AL</span>
             </div>
           </div>
 
