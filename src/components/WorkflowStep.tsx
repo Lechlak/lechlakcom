@@ -27,7 +27,7 @@ export const WorkflowStep = ({
       <div className="flex items-center gap-4">
         <div className={cn(
           "p-3 rounded-lg transition-colors",
-          isActive ? "bg-sky-500/20" : "bg-gray-500/20"
+          isActive ? "bg-blue-500/20" : "bg-gray-500/20"
         )}>
           <Icon className={cn(
             "w-6 h-6 transition-colors",
