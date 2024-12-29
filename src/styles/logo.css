@@ -1,7 +1,7 @@
 .triforce {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 4em;
+    height: 4em;
   }
   
   .triforce::before,
