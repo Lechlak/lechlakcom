@@ -7,7 +7,7 @@ import { debounce } from "lodash";
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const sections = useMemo(
     () => [
@@ -65,17 +65,16 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Triangle logo with transparent text */}
-          <div className="flex-shrink-0">
-            <div
-              className="relative w-10 h-10 border-l-8 border-t-8 border-[#002b45]"
-              style={{
-                clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
-              }}
-            >
-              <span className="absolute inset-0 flex items-center justify-center text-transparent font-bold text-xs">
-                AL
-              </span>
+          {/* Updated Logo Design */}
+          <div className="flex-shrink-0 flex items-center">
+            <div className="relative flex items-center">
+              <div
+                className="w-8 h-8 bg-[#9b87f5] transform rotate-180"
+                style={{
+                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                }}
+              />
+              <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
             </div>
           </div>
 
@@ -116,14 +115,15 @@ export const Navigation = () => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="flex flex-col items-center justify-center md:hidden">
-            <div className="relative w-10 h-10 border-l-8 border-t-8 border-[#002b45] my-4"
-              style={{
-                clipPath: "polygon(50% 0%, 100% 100%, 0% 100%)",
-              }}
-            >
-              <span className="absolute inset-0 flex items-center justify-center text-transparent font-bold text-xs">
-                AL
-              </span>
+            {/* Mobile Logo */}
+            <div className="relative flex items-center my-4">
+              <div
+                className="w-8 h-8 bg-[#9b87f5] transform rotate-180"
+                style={{
+                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+                }}
+              />
+              <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
             </div>
 
             {/* Mobile Navigation Links */}
@@ -139,7 +139,7 @@ export const Navigation = () => {
                   className={`nav-link ${
                     activeSection === section.id ? "active text-sky-500" : "text-gray-400"
                   }`}
-                  onClick={toggleMenu} // Close the menu on link click
+                  onClick={toggleMenu}
                 >
                   {section.label}
                 </Link>
