@@ -23,25 +23,37 @@ export const Navigation = () => {
 
   const handleScroll = useCallback(
     debounce(() => {
+      // Map sections to their DOM elements
       const sectionElements = sections.map((section) => ({
         id: section.id,
         element: document.getElementById(section.id),
       }));
-
+  
+      // Find the currently active section based on scroll position
       const currentSection = sectionElements.find((section) => {
         if (!section.element) return false;
         const rect = section.element.getBoundingClientRect();
         return rect.top <= 100 && rect.bottom >= 100;
       });
-
+  
       if (currentSection) {
         setActiveSection(currentSection.id);
       }
-
+  
+      // Adjust the rotation of the icon
+      const rotation = window.scrollY / 5; // Adjust divisor to control speed
+      const icon = document.querySelector(".rotating-icon"); // Ensure this class is applied to your icon
+      if (icon) {
+        icon.style.transform = `rotate(${rotation}deg)`;
+      }
+  
+      // Set the scrolled state
       setScrolled(window.scrollY > 20);
     }, 100),
     [sections]
   );
+  
+  
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -68,8 +80,8 @@ export const Navigation = () => {
           {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center">
             <div className="relative flex items-center">
-              <div
-                className="w-4 h-4 bg-sky-800 transform rotate-0"
+            <div
+                className="w-4 h-4 bg-sky-800 transform rotating-icon"
                 style={{
                   clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
                 }}
