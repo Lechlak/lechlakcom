@@ -1,12 +1,8 @@
 .triforce {
-    clip-path: polygon(
-      50% 0%, 75% 50%, 25% 50%, /* Top triangle */
-      0% 100%, 50% 100%, 100% 100%, /* Bottom two triangles */
-      50% 50% /* Center point to form connections */
-    );
+    position: relative;
+    width: 4em;
+    height: 4em;
   }
-  
-  
   
   .triforce::before,
   .triforce::after,
