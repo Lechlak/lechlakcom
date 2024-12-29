@@ -1,9 +1,11 @@
 .triforce {
     clip-path: polygon(
-      25% 0%, 75% 0%, 100% 50%, /* Top triangle */
-      75% 100%, 25% 100%, 0% 50% /* Bottom triangles */
+      50% 0%, 75% 50%, 25% 50%, /* Top triangle */
+      0% 100%, 50% 100%, 100% 100%, /* Bottom two triangles */
+      50% 50% /* Center point to form connections */
     );
   }
+  
   
   
   .triforce::before,
