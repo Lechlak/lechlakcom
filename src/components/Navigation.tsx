@@ -69,12 +69,12 @@ export const Navigation = () => {
           <div className="flex-shrink-0 flex items-center">
             <div className="relative flex items-center">
               <div
-                className="w-6 h-6 bg-sky-800 transform rotate-0"
+                className="w-4 h-4 bg-sky-800 transform rotate-0"
                 style={{
                   clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
                 }}
               />
-              <span className="ml-2 text-xl font-bold text-sky-900">AL</span>
+              <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
           </div>
 
