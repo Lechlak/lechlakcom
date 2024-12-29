@@ -2,6 +2,11 @@
     position: relative;
     width: 4em;
     height: 4em;
+    clip-path: polygon(
+    50% 100%, /* Bottom point */
+    0% 0%,    /* Top-left point */
+    100% 0%   /* Top-right point */
+  );
   }
   
   .triforce::before,
