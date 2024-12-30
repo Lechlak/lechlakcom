@@ -46,10 +46,10 @@ export const Navigation = () => {
   );
   
   const handleInstantScroll = useCallback(() => {
-    const rotation = window.scrollY / 5;
-    const icon = document.querySelector(".rotating-icon");
+    const currentRotation = window.scrollY / 5;
+    const icon = document.querySelector(".triforce");
     if (icon) {
-      icon.style.transform = `rotate(${rotation}deg)`;
+      (icon as HTMLElement).style.transform = `rotate(${currentRotation}deg)`;
     }
   }, []);
   
@@ -62,12 +62,10 @@ export const Navigation = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
   
     return () => {
-      handleScroll.cancel(); // Cancel debounce if applicable
+      handleScroll.cancel();
       window.removeEventListener("scroll", onScroll);
     };
   }, [handleScroll, handleInstantScroll]);
-  
-
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -83,13 +81,14 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Updated Logo Design */}
+          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <div className="relative flex items-center">
-            <Icon className="w-12 h-12 bg-amber-400 transform triforce" path={mdiTriforce} size={1} />
+              <Icon className="w-12 h-12 bg-amber-400 transform triforce" path={mdiTriforce} size={1} />
               <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
           </div>
+
           {/* Hamburger Menu Icon for Mobile */}
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
