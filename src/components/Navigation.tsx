@@ -3,8 +3,6 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
-import Icon from '@mdi/react';
-import { mdiTriforce } from '@mdi/js';
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -46,10 +44,10 @@ export const Navigation = () => {
   );
   
   const handleInstantScroll = useCallback(() => {
-    const currentRotation = window.scrollY / 5;
-    const icon = document.querySelector(".triforce");
+    const rotation = window.scrollY / 5;
+    const icon = document.querySelector(".rotating-icon");
     if (icon) {
-      (icon as HTMLElement).style.transform = `rotate(${currentRotation}deg)`;
+      icon.style.transform = `rotate(${rotation}deg)`;
     }
   }, []);
   
@@ -59,13 +57,23 @@ export const Navigation = () => {
       handleInstantScroll();
     };
   
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll);
   
     return () => {
-      handleScroll.cancel();
       window.removeEventListener("scroll", onScroll);
     };
   }, [handleScroll, handleInstantScroll]);
+  
+  
+  
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      handleScroll.cancel();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -81,14 +89,15 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center">
             <div className="relative flex items-center">
-              <Icon className="w-12 h-12 bg-amber-400 transform triforce" path={mdiTriforce} size={1} />
+            <div
+      className="w-12 h-12 bg-amber-400 transform triforce"
+    />
               <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
           </div>
-
           {/* Hamburger Menu Icon for Mobile */}
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
