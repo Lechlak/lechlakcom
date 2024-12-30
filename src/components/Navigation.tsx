@@ -138,11 +138,9 @@ export const Navigation = () => {
             {/* Mobile Logo */}
             <div className="relative flex items-center my-4">
               <div
-                className="w-8 h-8 bg-[#9b87f5] transform rotate-180"
-                style={{
-                  clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
-                }}
-              />
+                className="w-8 h-8 bg-[#9b87f5] transform rotate-180">
+                  <img src="./triforce.svg" />
+              <div/>
               <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
             </div>
 
