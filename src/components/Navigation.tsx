@@ -59,23 +59,15 @@ export const Navigation = () => {
       handleInstantScroll();
     };
   
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
   
     return () => {
+      handleScroll.cancel(); // Cancel debounce if applicable
       window.removeEventListener("scroll", onScroll);
     };
   }, [handleScroll, handleInstantScroll]);
   
-  
-  
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      handleScroll.cancel();
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -94,7 +86,7 @@ export const Navigation = () => {
           {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center">
             <div className="relative flex items-center">
-            <Icon path={mdiTriforce} size={1} />
+            <Icon className="w-12 h-12 bg-amber-400 transform triforce" path={mdiTriforce} size={1} />
               <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
           </div>
