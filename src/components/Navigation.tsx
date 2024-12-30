@@ -91,10 +91,12 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center">
-            <div className="relative flex items-center">
+          <div className="relative flex items-center">
             <div
-                className="w-8 h-8 transform rotation rotating-icon">
-                  <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
+                className="w-8 h-8 transform rotate-0 rotating-icon"
+                style={{ transformOrigin: "center" }}
+              >
+                <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
               </div>
               <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
