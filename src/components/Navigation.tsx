@@ -139,8 +139,8 @@ export const Navigation = () => {
             <div className="relative flex items-center my-4">
               <div
                 className="w-8 h-8 bg-[#9b87f5] transform rotate-180">
-                  <img src="./triforce.svg" />
-              <div/>
+                  <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
+              </div>
               <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
             </div>
 
