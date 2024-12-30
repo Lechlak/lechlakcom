@@ -175,10 +175,10 @@ export const HeroBanner = () => {
       <div className="relative z-10 flex flex-col h-full items-center justify-center">
         <div className="text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
-            Data Analytics Director
+            Design & Analytics
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Transforming complex data into actionable insights through innovative analytics solutions
+            Transforming complex data into actionable insights through innovative automations and efficient solutions
           </p>
         </div>
       </div>

@@ -53,7 +53,7 @@ export const Contact = () => {
               Let's collaborate on developing and enhancing engineering workflows together.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
               <motion.a
                 key={index}
