@@ -3,6 +3,8 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
+import Icon from '@mdi/react';
+import { mdiTriforce } from '@mdi/js';
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -92,13 +94,7 @@ export const Navigation = () => {
           {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center">
             <div className="relative flex items-center">
-            <div
-  className="w-16 h-16 bg-sky-800 transform"
-  style={{
-    clipPath: "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-    transform: `rotate(${rotation}deg)`,
-  }}
-/>
+            <Icon path={mdiTriforce} size={1} />
               <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
           </div>
