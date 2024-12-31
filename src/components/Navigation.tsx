@@ -97,7 +97,7 @@ export const Navigation = () => {
                 className="w-8 h-8 transform glow-effect"
                 style={{ transformOrigin: "center" }}
               >
-                <img src="./triforce.png" alt="3 triangle logo for Lechlak" />
+                <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
               </div>
               <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
             </div>
@@ -139,15 +139,6 @@ export const Navigation = () => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="flex flex-col items-center justify-center md:hidden">
-            {/* Mobile Logo */}
-            <div className="relative flex items-center my-4">
-              <div
-                className="w-8 h-8 transform glowing-effect">
-                  <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
-              </div>
-              <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
-            </div>
-
             {/* Mobile Navigation Links */}
             <div className="flex flex-col items-center space-y-4">
               {sections.map((section) => (
