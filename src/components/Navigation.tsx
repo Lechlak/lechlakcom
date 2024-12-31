@@ -45,7 +45,7 @@ export const Navigation = () => {
   
   const handleGlowEffect = useCallback(() => {
     const scrollIntensity = Math.min(window.scrollY / 100, 1); // Scale intensity from 0 to 1
-    const icon = document.querySelector(".rotating-icon");
+    const icon = document.querySelector(".glow-effect");
     if (icon) {
       icon.style.boxShadow = `0 0 ${10 + scrollIntensity * 20}px rgba(255, 223, 0, ${scrollIntensity})`;
       icon.style.filter = `brightness(${1 + scrollIntensity})`;
@@ -94,7 +94,7 @@ export const Navigation = () => {
           <div className="flex-shrink-0 flex items-center">
           <div className="relative flex items-center">
             <div
-                className="w-8 h-8 transform rotate-0 rotating-icon"
+                className="w-8 h-8 transform glow-effect"
                 style={{ transformOrigin: "center" }}
               >
                 <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
