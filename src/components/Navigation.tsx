@@ -43,18 +43,19 @@ export const Navigation = () => {
     [sections]
   );
   
-  const handleInstantScroll = useCallback(() => {
-    const rotation = window.scrollY / 5;
+  const handleGlowEffect = useCallback(() => {
+    const scrollIntensity = Math.min(window.scrollY / 100, 1); // Scale intensity from 0 to 1
     const icon = document.querySelector(".rotating-icon");
     if (icon) {
-      icon.style.transform = `rotate(${rotation}deg)`;
+      icon.style.boxShadow = `0 0 ${10 + scrollIntensity * 20}px rgba(255, 223, 0, ${scrollIntensity})`;
+      icon.style.filter = `brightness(${1 + scrollIntensity})`;
     }
   }, []);
   
   useEffect(() => {
     const onScroll = () => {
       handleScroll();
-      handleInstantScroll();
+      handleGlowEffect();
     };
   
     window.addEventListener("scroll", onScroll);
@@ -62,7 +63,7 @@ export const Navigation = () => {
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
-  }, [handleScroll, handleInstantScroll]);
+  }, [handleScroll, handleGlowEffect]);
   
   
   
