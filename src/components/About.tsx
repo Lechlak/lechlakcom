@@ -27,7 +27,7 @@ export const About = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-            ><h3>Andy Lechlak</h3>
+            ><h2>Andy Lechlak</h2>
               <p className="text-xl text-gray-300 leading-relaxed">
                 Transforming complex data into actionable insights with over 15 years of experience. 
                 Specializing in full-stack development, statistical analysis, and machine learning implementations. 
