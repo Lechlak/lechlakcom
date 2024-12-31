@@ -45,7 +45,7 @@ export const Navigation = () => {
   
   const handleGlowEffect = useCallback(() => {
     const scrollIntensity = Math.min(window.scrollY / 100, 1); // Scale intensity from 0 to 1
-    const icon = document.querySelector(".glow-effect");
+    const icon = document.querySelector(".rotating-icon");
     if (icon) {
       icon.style.boxShadow = `0 0 ${10 + scrollIntensity * 20}px rgba(255, 223, 0, ${scrollIntensity})`;
       icon.style.filter = `brightness(${1 + scrollIntensity})`;
@@ -94,7 +94,7 @@ export const Navigation = () => {
           <div className="flex-shrink-0 flex items-center">
           <div className="relative flex items-center">
             <div
-                className="w-8 h-8 transform glow-effect"
+                className="w-8 h-8 transform rotate-0 rotating-icon"
                 style={{ transformOrigin: "center" }}
               >
                 <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
@@ -139,6 +139,15 @@ export const Navigation = () => {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="flex flex-col items-center justify-center md:hidden">
+            {/* Mobile Logo */}
+            <div className="relative flex items-center my-4">
+              <div
+                className="w-8 h-8 bg-[#9b87f5] transform rotate-180">
+                  <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
+              </div>
+              <span className="ml-2 text-xl font-bold text-[#1A1F2C]">AL</span>
+            </div>
+
             {/* Mobile Navigation Links */}
             <div className="flex flex-col items-center space-y-4">
               {sections.map((section) => (
