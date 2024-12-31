@@ -160,7 +160,11 @@ const StarField = () => {
 
 export const HeroBanner = () => {
   return (
-    <div className="relative h-50vh w-full overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
+    <div
+  className="relative w-full overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]"
+  style={{ minHeight: '50vh' }}
+>
+
       <StarField />
       <ParticleNetwork />
       <div className="relative z-10 flex flex-col h-3/6 items-center justify-center">
