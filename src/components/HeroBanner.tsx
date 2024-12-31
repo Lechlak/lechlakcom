@@ -167,7 +167,7 @@ export const HeroBanner = () => {
 
       <StarField />
       <ParticleNetwork />
-      <div className="relative z-10 flex flex-col h-3/6 items-center justify-center">
+      <div className="relative z-10 flex flex-col h-full items-center justify-center">
         <div className="text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
             Design & Analytics
