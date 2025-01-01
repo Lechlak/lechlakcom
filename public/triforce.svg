@@ -2,7 +2,7 @@
   <defs>
     <style>
       .st0 {
-        fill: #e8c000;
+        fill: rgb(14,165,233);
       }
     </style>
     <filter id="glow">

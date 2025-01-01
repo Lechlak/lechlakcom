@@ -97,10 +97,9 @@ export const Navigation = () => {
                 className="w-8 h-8 transform rotate-0 rotating-icon"
                 style={{ transformOrigin: "center" }}
               >
-               
-                <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
+                <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
               </div>
-              <span className="ml-2 text-xl font-bold text-sky-700">AL</span>
+              <span className="ml-2 text-xl font-bold text-sky-600">AL</span>
             </div>
           </div>
           {/* Hamburger Menu Icon for Mobile */}
