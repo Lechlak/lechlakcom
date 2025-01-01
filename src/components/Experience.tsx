@@ -12,7 +12,7 @@ export const Experience = () => {
       description: "15 years of analytics expertise driving strategic decisions",
       icon: faUsers,
       color: "from-teal-500 to-sky-500",
-      image: "./no-monkey-business.png"
+      image: "./OneDay.png"
     },
     {
       title: "Project Management",

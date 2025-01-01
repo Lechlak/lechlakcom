@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 export const Awards = () => {
   const awards = [
     {
+      title: "2023 IMLS National Medal Winner",
+      organization: "Toledo Lucas County Public Library",
+      year: "2023",
+      description: "Awarded to only 8 libraries and/or museums.",
+      image: "./nationalmedal.jpg",
+    },
+    {
       title: "Web Literacy Grant Recipient",
       organization: "Mozilla Foundation",
       year: "2018-2019",
       description: "Recognition for web literacy education.",
       image: "./mozilla-web-literacy.jpg",
-    },
-    {
-      title: "2023 IMLS National Medal Winner",
-      organization: "Toledo Lucas County Public Library",
-      year: "2023",
-      description: "Awarded to only 8 libraries and/or museums..",
-      image: "./nationalmedal.jpg",
     },
     {
       title: "Google Ad Award Recipient",

@@ -10,7 +10,7 @@ export const Portfolio = () => {
     },
     {
       title: "Demographics & Socio-Economics",
-      description: "Interactive platform for market trend analysis and forecasting",
+      description: "Interactive platform for market trend analysis, forecasting, and goal setting.",
       tags: ["Python", "SQL", "Tableau"],
       image: "./demographics.png"
     },
@@ -22,19 +22,19 @@ export const Portfolio = () => {
     },
     {
       title: "Accessibility",
-      description: "Voluntary Product Accessibility Template - Digital Accessibility (AA)",
+      description: "Voluntary Product Accessibility Template - WCAG AA",
       tags: ["Lighthouse", "WCAG", "WebAIM", "Wrike"],
       image: "./user-experience.png"
     },
     {
       title: "Workflow and Automation",
-      description: "Integrate data to improve communication, clarity, and accountability.",
+      description: "Integrate data to improve collaboration, transparency, and accountability.",
       tags: ["Power Automate", "Sharepoint", "Zapier"],
       image: "./zapier.png"
     },
     {
       title: "ToledoLibrary.org",
-      description: "Over 100 active integrations and 30 million views",
+      description: "Over 100 active integrations and 30 million views annually",
       tags: ["PHP", "React", "WordPress"],
       image: "./toledo-library.png"
     },

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export const About = () => {
   const stats = [
-    { value: "15+", label: "Years Experience", color: "text-teal-400" },
+    { value: "15+", label: "Years of experience", color: "text-teal-400" },
     { value: "10+", label: "Years married", color: "text-cyan-400" },
     { value: "3", label: "Children", color: "text-sky-400" },
     { value: "1", label: "Puppy", color: "text-blue-400" },
@@ -17,7 +17,7 @@ export const About = () => {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent"
         >
-          Who am I
+          Andy Lechlak
         </motion.h2>
         <div className="glass-card p-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10" />
@@ -27,7 +27,7 @@ export const About = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-            ><h2>Andy Lechlak</h2>
+            >
               <p className="text-xl text-gray-300 leading-relaxed">
                 Transforming complex data into actionable insights with over 15 years of experience. 
                 Specializing in full-stack development, statistical analysis, and machine learning implementations. 

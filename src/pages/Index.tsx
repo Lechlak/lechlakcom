@@ -25,10 +25,10 @@ const Index = () => {
         <section id="workflow" className="py-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Data Flow Architecture
+              Data Process Flow
             </h2>
             <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-              Experience a seamless journey from data collection to automated results through our advanced workflow system.
+            Effortlessly transition from data collection to organized, automated results with our streamlined workflow system.
             </p>
           </div>
           <WorkflowAnimation />

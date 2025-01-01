@@ -19,7 +19,7 @@ export const WorkflowAnimation = () => {
     {
       icon: Cpu,
       title: "Processing",
-      description: "Advanced algorithms process and anonymize data clean rooms",
+      description: "Advanced algorithms process and anonymize data into clean rooms",
     },
     {
       icon: GitBranch,
