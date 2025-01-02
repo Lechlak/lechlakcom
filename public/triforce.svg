@@ -2,14 +2,16 @@
   <defs>
     <style>
       .st0 {
-        fill: rgb(2, 132, 199);
+        fill: rgb(2,132,199);
       }
     </style>
     <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
+  <path class="st0" filter="url(#glow)" d="M1.5,21L12,3.5l10.5,17.5H1.5M12,21l5-9H7l5,9Z"/>
 </svg>
