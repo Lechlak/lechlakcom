@@ -164,7 +164,6 @@ export const HeroBanner = () => {
   className="relative w-full overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e] not-50vh"
   
 >
-{/* style={{ minHeight: '50vh' }} */}
       <StarField />
       <ParticleNetwork />
       <div className="relative z-10 flex flex-col h-full items-center justify-center not-50vh">
