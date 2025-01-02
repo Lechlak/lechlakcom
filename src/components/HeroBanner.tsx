@@ -7,15 +7,6 @@ interface Particle {
   vy: number;
 }
 
-import { useEffect, useRef } from 'react';
-
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-}
-
 const ParticleNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
