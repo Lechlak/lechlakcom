@@ -161,7 +161,7 @@ const StarField = () => {
 export const HeroBanner = () => {
   return (
     <div
-  className="relative w-full overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
+  className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
 
       <StarField />
       <ParticleNetwork />
