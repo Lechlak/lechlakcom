@@ -23,7 +23,7 @@ export const Portfolio = () => {
     {
       title: "Accessibility",
       description: "Voluntary Product Accessibility Template - WCAG AA",
-      tags: ["Lighthouse", "WCAG", "WebAIM", "Wrike"],
+      tags: ["Lighthouse", "WCAG", "WebAIM"],
       image: "./user-experience.png"
     },
     {

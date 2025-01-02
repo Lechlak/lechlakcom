@@ -3,6 +3,8 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -83,7 +85,7 @@ export const Navigation = () => {
   }, [handleScroll]);
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -111,11 +113,7 @@ export const Navigation = () => {
           {/* Hamburger Menu Icon for Mobile */}
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
-              {menuOpen ? (
-                <span className="material-icons">close</span>
-              ) : (
-                <span className="material-icons">menu</span>
-              )}
+              {menuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
           </div>
 

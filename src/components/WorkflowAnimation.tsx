@@ -37,7 +37,7 @@ export const WorkflowAnimation = () => {
   useEffect(() => {
     if (!inView) return;
     
-    const interval = setInterval(updateActiveStep, 3000);
+    const interval = setInterval(updateActiveStep, 2000);
     return () => clearInterval(interval);
   }, [inView, updateActiveStep]);
 
