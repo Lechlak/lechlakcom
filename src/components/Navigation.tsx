@@ -44,18 +44,25 @@ export const Navigation = () => {
   );
   
   const handleGlowEffect = useCallback(() => {
-    const scrollIntensity = Math.min(window.scrollY / 100, 1); // Scale intensity from 0 to 1
     const icon = document.querySelector(".rotating-icon");
+  
     if (icon) {
-      icon.style.boxShadow = `0 0 ${10 + scrollIntensity * 20}px rgba(255, 223, 0, ${scrollIntensity})`;
-      icon.style.filter = `brightness(${1 + scrollIntensity})`;
+      // Apply glow effect
+      icon.style.boxShadow = "0 0 20px rgba(255, 223, 0, 1)";
+      icon.style.filter = "brightness(1.5)";
+  
+      // Remove glow effect after 1 second
+      setTimeout(() => {
+        icon.style.boxShadow = "none";
+        icon.style.filter = "none";
+      }, 1000);
     }
   }, []);
   
   useEffect(() => {
     const onScroll = () => {
       handleScroll();
-      handleGlowEffect();
+      handleGlowEffect(); // Trigger glow effect on scroll
     };
   
     window.addEventListener("scroll", onScroll);
@@ -64,7 +71,6 @@ export const Navigation = () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, [handleScroll, handleGlowEffect]);
-  
   
   
 
