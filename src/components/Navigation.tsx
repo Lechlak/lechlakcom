@@ -137,7 +137,7 @@ export const Navigation = () => {
           </div>
 
           {/* Theme Toggle */}
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
 
         {/* Mobile Menu */}
