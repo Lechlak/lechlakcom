@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
 
-
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);

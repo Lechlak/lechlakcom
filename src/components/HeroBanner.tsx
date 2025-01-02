@@ -7,6 +7,15 @@ interface Particle {
   vy: number;
 }
 
+import { useEffect, useRef } from 'react';
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+}
+
 const ParticleNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -152,11 +161,11 @@ const StarField = () => {
 export const HeroBanner = () => {
   return (
     <div
-  className="relative w-full overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e] not-50vh"
->
+  className="relative w-full overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
+
       <StarField />
       <ParticleNetwork />
-      <div className="relative z-10 flex flex-col h-full items-center justify-center not-50vh">
+      <div className="relative z-10 flex flex-col h-full items-center justify-center">
         <div className="text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
             Design & Analytics
