@@ -48,14 +48,14 @@ export const Navigation = () => {
   
     if (icon) {
       // Apply glow effect
-      icon.style.boxShadow = "0 0 20px rgba(255, 223, 0, 1)";
+      icon.style.boxShadow = "0 0 20px rgb(253, 244, 189)";
       icon.style.filter = "brightness(1.5)";
   
       // Remove glow effect after 1 second
       setTimeout(() => {
         icon.style.boxShadow = "none";
         icon.style.filter = "none";
-      }, 1000);
+      }, 500);
     }
   }, []);
   
