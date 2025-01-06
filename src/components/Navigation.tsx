@@ -3,7 +3,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
-import { Menu } from "lucide-react";
+import { SquareX, SquareMenu } from "lucide-react";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -113,9 +113,9 @@ export const Navigation = () => {
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
               {menuOpen ? (
-                <Menu className="h-5 w-5" />
+                <SquareX className="h-5 w-5" />
               ) : (
-                <span className="material-icons">menu</span>
+                <SquareMenu className="h-5 w-5" />
               )}
             </button>
           </div>
