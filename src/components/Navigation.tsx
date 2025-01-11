@@ -145,7 +145,7 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="flex flex-col items-center justify-center md:hidden">
+          <div className="py-4 flex flex-col items-center justify-center md:hidden">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col items-center space-y-4">
               {sections.map((section) => (
