@@ -104,7 +104,7 @@ export const Navigation = () => {
                 className="w-8 h-8 transform rotate-0 rotating-icon"
                 style={{ transformOrigin: "center" }}
               >
-                <img src="./triforce.svg" alt="3 triangle logo for Lechlak" />
+                <img src="./triangles.png" alt="3 triangle logo for Lechlak" />
               </div>
               <span className="ml-2 text-xl font-bold text-sky-600">AL</span>
             </div>
