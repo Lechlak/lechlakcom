@@ -16,6 +16,17 @@ export const ThemeToggle = () => {
   };
 
   return (
-    
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={toggleTheme}
+      className="h-8 w-8 hidden"
+    >
+      {theme === "light" ? (
+        <Moon className="h-5 w-5" />
+      ) : (
+        <Sun className="h-5 w-5" />
+      )}
+    </Button>
   );
 };
