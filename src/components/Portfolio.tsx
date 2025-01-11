@@ -41,7 +41,7 @@ export const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="pt-16">
+    <section id="portfolio" className="">
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
         Portfolio
       </h2>

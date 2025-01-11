@@ -9,7 +9,7 @@ export const About = () => {
   ];
 
   return (
-    <section className="relative py-20">
+    <section className="relative">
       <div className="max-w-6xl mx-auto">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
