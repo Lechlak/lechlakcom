@@ -11,10 +11,10 @@
     --foreground: 220 14% 43%; /* rgb(101, 113, 121) */
  
     --card: 0 0% 100%;
-    --card-foreground: 215 28% 33%; /* rgb(40, 97, 129) */
+    --card-foreground: 215 28% 66%; /* rgb(40, 97, 129) */
  
     --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 33%;
+    --popover-foreground: 215 28% 66%;
  
     --primary: 189 95% 39%; /* rgb(5, 171, 196) */
     --primary-foreground: 0 0% 100%;
