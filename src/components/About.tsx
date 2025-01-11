@@ -49,8 +49,7 @@ export const About = () => {
                   </motion.div>
                 ))}
               </div>
-              <p></p>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              <p className="text-xl text-gray-300 leading-relaxed mt-12">
                  I'm an avid fan of video games, enjoy binge-watching TV shows, love taking long walks (indoors), and have a lifelong passion for Disney.
               </p>
             </motion.div>
