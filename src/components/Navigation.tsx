@@ -98,7 +98,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Updated Logo Design */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center min-w-20">
           <div className="relative flex items-center">
             <div
                 className="w-8 h-8 transform rotate-0 rotating-icon"
