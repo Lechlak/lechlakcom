@@ -140,7 +140,7 @@ export const Navigation = () => {
           </div>
 
           {/* Theme Toggle */}
-          <ThemeToggle />
+          
         </div>
 
         {/* Mobile Menu */}

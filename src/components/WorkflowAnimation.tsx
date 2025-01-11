@@ -42,7 +42,7 @@ export const WorkflowAnimation = () => {
   }, [inView, updateActiveStep]);
 
   return (
-    <div ref={ref} className="relative max-w-4xl mx-auto py-12">
+    <div ref={ref} className="relative max-w-4xl mx-auto py-0">
       {/* Assembly line road background */}
       <div className="absolute top-1/2 left-0 w-full h-16 -translate-y-1/2 bg-gray-800/10 rounded-full" />
       
