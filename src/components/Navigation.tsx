@@ -153,7 +153,7 @@ export const Navigation = () => {
               title="Download Resume"
             >
               <Download className="h-5 w-5" />
-              <span className="hidden md:inline">Resume</span>
+              <span className="md:inline">Resume</span>
             </a>
           </div>
 
