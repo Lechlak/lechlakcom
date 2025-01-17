@@ -144,14 +144,8 @@ export const Navigation = () => {
             {/* Theme Toggle */}
             <ThemeToggle />
 
-            <button
-  onClick={() => window.open("https://lechlak.com/resume.pdf", "_blank")}
-  className="text-gray-400 hover:text-sky-500 transition flex items-center space-x-2"
-  title="Download Resume"
->
-  <Download className="h-5 w-5" />
-  <span className="sm:inline">Resume</span>
-</button>
+            <ResumeLink />
+
 
           </div>
 
