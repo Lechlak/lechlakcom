@@ -3,7 +3,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
-import { SquareX, SquareMenu } from "lucide-react";
+import { SquareX, SquareMenu, Download } from "lucide-react";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -144,7 +144,18 @@ export const Navigation = () => {
             {/* Theme Toggle */}
             <ThemeToggle />
 
-            <ResumeLink />
+            <a
+  href="https://lechlak.com/resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-gray-400 hover:text-sky-500 transition flex items-center space-x-2"
+  title="Download Resume"
+  aria-label="Download Resume"
+>
+  <Download className="h-5 w-5" />
+  <span className="sm:inline">Resume</span>
+</a>
+
 
 
           </div>
