@@ -139,23 +139,9 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Right Corner Icons */}
-          <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
-            <ThemeToggle />
-
-            {/* Resume Download Icon */}
-            <a
-              href="https://lechlak.com/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-sky-500 transition flex items-center space-x-2"
-              title="Download Resume"
-            >
-              <Download className="h-5 w-5" />
-              <span className="hidden md:inline">Resume</span>
-            </a>
-          </div>
+          {/* Theme Toggle */}
+          <ThemeToggle />
+        </div>
 
         {/* Mobile Menu */}
         {menuOpen && (

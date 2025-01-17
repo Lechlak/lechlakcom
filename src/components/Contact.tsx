@@ -13,14 +13,14 @@ export const Contact = () => {
     },
     {
       icon: MessageSquare,
-      label: "Discord",
-      href: "https://discord.com/users/225670301084680194",
+      label: "Resume",
+      href: "https://www.lechlak.com/resume.pdf",
       color: "group-hover:text-sky-500"
     },
     {
       icon: Mail,
       label: "Email",
-      href: "mailto:andy@lechlak.com",
+      href: "mailto:andrewlechlak@gmail.com",
       color: "group-hover:text-sky-500"
     }
   ];
