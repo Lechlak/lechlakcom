@@ -3,7 +3,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
-import { SquareX, SquareMenu, Download } from "lucide-react";
+import { SquareX, SquareMenu } from "lucide-react";
 
 export const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
