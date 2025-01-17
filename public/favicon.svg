@@ -1,4 +1,17 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 4L4 28H28L16 4Z" fill="#9b87f5"/>
-  <text x="16" y="24" text-anchor="middle" fill="#1A1F2C" font-family="Arial" font-weight="bold" font-size="12">AL</text>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .st0 {
+        fill: rgb(2,132,199);
+      }
+    </style>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path class="st0" filter="url(#glow)" d="M1.5,21L12,3.5l10.5,17.5H1.5M12,21l5-9H7l5,9Z"/>
 </svg>
