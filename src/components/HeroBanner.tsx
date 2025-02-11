@@ -1,5 +1,13 @@
-
 import { useEffect, useState, useRef } from 'react';
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+}
+
+import { useEffect, useRef } from 'react';
 
 interface Particle {
   x: number;
@@ -99,6 +107,9 @@ const ParticleNetwork = () => {
   return <canvas ref={canvasRef} className="absolute inset-0 z-0" />;
 };
 
+export default ParticleNetwork;
+
+
 const StarField = () => {
   const [stars, setStars] = useState<Array<{ x: number; y: number; size: number; opacity: number }>>([]);
 
@@ -149,7 +160,9 @@ const StarField = () => {
 
 export const HeroBanner = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
+    <div
+  className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
+
       <StarField />
       <ParticleNetwork />
       <div className="relative h-screen z-10 flex flex-col h-full items-center justify-center">
