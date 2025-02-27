@@ -27,7 +27,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="relative">
-      <div className="absolute inset-0 bg-gradient-to-t from-sky-500/10 via-transparent to-transparent" />
+      <div className="absolute inset-0 from-sky-500/10 via-transparent to-transparent" />
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
