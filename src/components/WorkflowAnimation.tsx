@@ -1,7 +1,9 @@
+
 import { useEffect, useState, useCallback } from 'react';
 import { Database, GitBranch, Cpu } from 'lucide-react';
 import { WorkflowStep } from './WorkflowStep';
 import { useInView } from 'react-intersection-observer';
+import { FlickeringGrid } from './ui/flickering-grid';
 
 export const WorkflowAnimation = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -42,14 +44,26 @@ export const WorkflowAnimation = () => {
   }, [inView, updateActiveStep]);
 
   return (
-    <div ref={ref} className="relative max-w-4xl mx-auto py-0">
+    <div ref={ref} className="relative max-w-4xl mx-auto py-8">
+      {/* Flickering Grid Background */}
+      <div className="absolute inset-0 z-0">
+        <FlickeringGrid
+          className="z-0 absolute inset-0 size-full"
+          squareSize={4}
+          gridGap={6}
+          color="#6B7280"
+          maxOpacity={0.3}
+          flickerChance={0.1}
+        />
+      </div>
+      
       {/* Assembly line road background */}
-      <div className="absolute top-1/2 left-0 w-full h-16 -translate-y-1/2 bg-gray-800/10 rounded-full" />
+      <div className="absolute top-1/2 left-0 w-full h-16 -translate-y-1/2 bg-gray-800/10 rounded-full z-1" />
       
       {/* Optimized pulsing light effect */}
       {inView && (
         <div
-          className="light-pulse"
+          className="light-pulse z-2"
           aria-hidden="true"
         />
       )}

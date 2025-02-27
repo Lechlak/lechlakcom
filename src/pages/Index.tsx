@@ -1,3 +1,4 @@
+
 import { HeroBanner } from "@/components/HeroBanner";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
@@ -22,13 +23,13 @@ const Index = () => {
         <div id="experience">
           <Experience />
         </div>
-        <section id="workflow" className="py-0">
+        <section id="workflow" className="py-8 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Data Process Flow
             </h2>
             <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-            Effortlessly transition from data collection to organized, automated results with our streamlined workflow system.
+              Effortlessly transition from data collection to organized, automated results with our streamlined workflow system.
             </p>
           </div>
           <WorkflowAnimation />
