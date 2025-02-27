@@ -2,7 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { MovingBorder } from "@/components/ui/moving-border";
+import { GradientButton } from "@/components/ui/gradient-button";
 
 export const Awards = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -44,13 +44,14 @@ export const Awards = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            {hoveredIndex === index && (
-              <div className="absolute -inset-0.5 rounded-lg z-0">
-                <MovingBorder duration={2500} rx="30%" ry="30%">
-                  <div className="h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]" />
-                </MovingBorder>
-              </div>
-            )}
+            <div className={`transition-opacity duration-300 ${hoveredIndex === index ? "opacity-100" : "opacity-0"} absolute -inset-0.5 rounded-lg z-0 flex items-center justify-center`}>
+              <GradientButton 
+                className="w-full h-full cursor-default" 
+                variant={index % 2 === 0 ? "default" : "variant"}
+              >
+                &nbsp;
+              </GradientButton>
+            </div>
             
             <motion.div
               initial={{ opacity: 0, y: 20 }}
