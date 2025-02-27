@@ -1,4 +1,33 @@
+
 import type { Config } from "tailwindcss";
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
+
+function flattenColorPalette(colors: any): any {
+  return Object.assign(
+    {},
+    ...Object.entries(colors ?? {}).map(([color, values]) => {
+      return typeof values == "object"
+        ? Object.entries(values).reduce(
+            (acc, [key, value]) => {
+              acc[`${color}-${key}`] = value;
+              return acc;
+            },
+            {} as Record<string, string>
+          )
+        : { [`${color}`]: values };
+    })
+  );
+}
 
 export default {
 	darkMode: ["class"],
@@ -92,5 +121,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), addVariablesForColors],
 } satisfies Config;

@@ -1,9 +1,14 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faUsers, faBullseye } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
+import { MovingBorder } from "@/components/ui/moving-border";
 
 export const Experience = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   const experiences = [
     {
       title: "Customer Experience",
@@ -42,21 +47,34 @@ export const Experience = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {experiences.map((exp, index) => (
-
-             <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col">
-            <div className="relative h-48">
-              <img 
-                src={exp.image} 
-                alt={exp.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
-            <CardContent className="p-6 flex-1 flex flex-col">
-              <h3 className="text-xl font-semibold mb-3 text-sky-500">{exp.title}</h3>
-              <p className="text-gray-300 mb-4 flex-1">{exp.description}</p>
-            </CardContent>
-          </Card>
-
+          <div 
+            key={index} 
+            className="relative"
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {hoveredIndex === index && (
+              <div className="absolute -inset-0.5 rounded-lg z-0">
+                <MovingBorder duration={2500} rx="30%" ry="30%">
+                  <div className="h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)]" />
+                </MovingBorder>
+              </div>
+            )}
+            
+            <Card className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col relative z-10">
+              <div className="relative h-48">
+                <img 
+                  src={exp.image} 
+                  alt={exp.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <CardContent className="p-6 flex-1 flex flex-col">
+                <h3 className="text-xl font-semibold mb-3 text-sky-500">{exp.title}</h3>
+                <p className="text-gray-300 mb-4 flex-1">{exp.description}</p>
+              </CardContent>
+            </Card>
+          </div>
         ))}
       </div>
     </section>
