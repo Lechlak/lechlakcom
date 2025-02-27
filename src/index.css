@@ -81,7 +81,7 @@
 }
 
 .glass-card:hover {
-  @apply shadow-lg shadow-sky-500/10 border-sky-500/20;
+  @apply shadow-lg shadow-sky-500/10 border-white/20;
   transform: translateY(-2px);
 }
 
