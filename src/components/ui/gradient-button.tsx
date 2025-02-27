@@ -18,7 +18,7 @@ const gradientButtonVariants = cva(
     "opacity-70 transition-opacity duration-200", // Adjusted transparency
     "hover:opacity-90", // Subtle hover effect
     "bg-gradient-to-r from-[rgba(255,255,255,0.2)] to-[rgba(0,0,0,0.2)]", // Transparent gradient
-    "backdrop-blur-sm", // Soft glass-like effect
+    "backdrop-blur-sm", // Soft glass-like effect"
   ],
   {
     variants: {
@@ -32,7 +32,6 @@ const gradientButtonVariants = cva(
     },
   }
 )
-
 
 export interface GradientButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
