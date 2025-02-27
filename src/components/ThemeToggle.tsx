@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -12,7 +12,7 @@ export const ThemeToggle = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
