@@ -7,15 +7,6 @@ interface Particle {
   vy: number;
 }
 
-import { useEffect, useRef } from 'react';
-
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-}
-
 const ParticleNetwork = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -28,7 +19,6 @@ const ParticleNetwork = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Resize Canvas
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -36,9 +26,8 @@ const ParticleNetwork = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Initialize Particles
     const initParticles = () => {
-      const particleCount = 100; // Increase if desired
+      const particleCount = 100;
       particlesRef.current = Array.from({ length: particleCount }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -48,30 +37,23 @@ const ParticleNetwork = () => {
     };
     initParticles();
 
-    // Animation Loop
     const animate = () => {
       if (!ctx || !canvas) return;
 
-      // Clear Canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw Particles and Connections
       particlesRef.current.forEach((particle) => {
-        // Update Position
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Bounce Off Edges
         if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
 
-        // Draw Particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2);
         ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
         ctx.fill();
 
-        // Draw Connections
         particlesRef.current.forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
@@ -90,7 +72,6 @@ const ParticleNetwork = () => {
       requestAnimationFrame(animate);
     };
 
-    // Fade Effect
     const fadeInterval = setInterval(() => {
       connectionOpacityRef.current =
         connectionOpacityRef.current <= 0 ? 0.1 : connectionOpacityRef.current - 0.01;
@@ -106,9 +87,6 @@ const ParticleNetwork = () => {
 
   return <canvas ref={canvasRef} className="absolute inset-0 z-0" />;
 };
-
-export default ParticleNetwork;
-
 
 const StarField = () => {
   const [stars, setStars] = useState<Array<{ x: number; y: number; size: number; opacity: number }>>([]);
@@ -160,9 +138,7 @@ const StarField = () => {
 
 export const HeroBanner = () => {
   return (
-    <div
-  className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
-
+    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#000000] to-[#1a1a2e]">
       <StarField />
       <ParticleNetwork />
       <div className="relative h-screen z-10 flex flex-col h-full items-center justify-center">

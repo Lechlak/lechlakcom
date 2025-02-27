@@ -1,3 +1,4 @@
+
 import { Link } from "react-scroll";
 import { ThemeToggle } from "./ThemeToggle";
 import { useCallback, useEffect, useState, useMemo } from "react";
@@ -45,14 +46,11 @@ export const Navigation = () => {
   );
   
   const handleGlowEffect = useCallback(() => {
-    const icon = document.querySelector(".rotating-icon");
-  
+    const icon = document.querySelector(".rotating-icon") as HTMLElement;
     if (icon) {
-      // Apply glow effect
       icon.style.boxShadow = "0 0 20px rgb(253, 244, 189)";
       icon.style.filter = "brightness(1.5)";
   
-      // Remove glow effect after 1 second
       setTimeout(() => {
         icon.style.boxShadow = "none";
         icon.style.filter = "none";
@@ -63,7 +61,7 @@ export const Navigation = () => {
   useEffect(() => {
     const onScroll = () => {
       handleScroll();
-      handleGlowEffect(); // Trigger glow effect on scroll
+      handleGlowEffect();
     };
   
     window.addEventListener("scroll", onScroll);
@@ -72,16 +70,6 @@ export const Navigation = () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, [handleScroll, handleGlowEffect]);
-  
-  
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      handleScroll.cancel();
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -97,19 +85,15 @@ export const Navigation = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Updated Logo Design */}
           <div className="flex-shrink-0 flex items-center min-w-20">
-          <div className="relative flex items-center">
-            <div
-                className="w-8 h-8 transform rotate-0 rotating-icon"
-                style={{ transformOrigin: "center" }}
-              >
+            <div className="relative flex items-center">
+              <div className="w-8 h-8 transform rotate-0 rotating-icon">
                 <img className="w-full" src="./triangles.png" alt="3 triangle logo for Lechlak" />
               </div>
               <span className="ml-2 text-xl font-bold text-sky-600">AL</span>
             </div>
           </div>
-          {/* Hamburger Menu Icon for Mobile */}
+          
           <div className="md:hidden flex items-center">
             <button onClick={toggleMenu} className="text-gray-400 focus:outline-none">
               {menuOpen ? (
@@ -120,7 +104,6 @@ export const Navigation = () => {
             </button>
           </div>
 
-          {/* Navigation Links for Desktop */}
           <div className="hidden md:flex items-center justify-center space-x-8">
             {sections.map((section) => (
               <Link
@@ -139,14 +122,11 @@ export const Navigation = () => {
             ))}
           </div>
 
-          {/* Theme Toggle */}
           <ThemeToggle />
         </div>
 
-        {/* Mobile Menu */}
         {menuOpen && (
           <div className="pb-4 flex flex-col items-center justify-center md:hidden">
-            {/* Mobile Navigation Links */}
             <div className="flex flex-col items-center space-y-4">
               {sections.map((section) => (
                 <Link
