@@ -40,7 +40,7 @@ export const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="relative overflow-hidden">
+    <section id="experience" className="relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-sky-500/5 to-transparent" />
       <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
         Experience
