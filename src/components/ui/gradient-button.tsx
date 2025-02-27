@@ -15,10 +15,6 @@ const gradientButtonVariants = cva(
     "font-sans font-bold",
     "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
     "disabled:pointer-events-none disabled:opacity-50",
-    "opacity-70 transition-opacity duration-200", // Adjusted transparency
-    "hover:opacity-90", // Subtle hover effect
-    "bg-gradient-to-r from-[rgba(255,255,255,0.2)] to-[rgba(0,0,0,0.2)]", // Transparent gradient
-    "backdrop-blur-sm", // Soft glass-like effect"
   ],
   {
     variants: {
