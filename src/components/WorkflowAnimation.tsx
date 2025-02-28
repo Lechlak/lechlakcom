@@ -44,7 +44,7 @@ export const WorkflowAnimation = () => {
   }, [inView, updateActiveStep]);
 
   return (
-    <div className="relative w-full py-20">
+    <div className="relative w-full py-20 flex justify-center">
       {/* Flickering Grid Background - Full width and height */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <FlickeringGrid
