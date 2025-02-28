@@ -12,7 +12,21 @@ export const About = () => {
 
   return (
     <section className="relative">
-      <div className="max-w-6xl mx-auto">
+      {/* Full section sparkles background */}
+      <div className="absolute inset-0 w-full h-full">
+        <SparklesCore
+          id="aboutSparkles"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.2}
+          particleDensity={70}
+          className="w-full h-full"
+          particleColor="#38b2ac"
+          speed={0.8}
+        />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="relative">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -22,20 +36,6 @@ export const About = () => {
           >
             Andy Lechlak
           </motion.h2>
-          
-          {/* Sparkles effect container */}
-          <div className="absolute inset-0 h-24 -top-2 w-full">
-            <SparklesCore
-              id="aboutSparkles"
-              background="transparent"
-              minSize={0.6}
-              maxSize={1.2}
-              particleDensity={70}
-              className="w-full h-full"
-              particleColor="#38b2ac"
-              speed={0.8}
-            />
-          </div>
         </div>
         
         <div className="glass-card p-8 relative overflow-hidden">
