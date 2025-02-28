@@ -1,4 +1,6 @@
+
 import { motion } from "framer-motion";
+import { SparklesCore } from "./ui/sparkles";
 
 export const About = () => {
   const stats = [
@@ -11,14 +13,31 @@ export const About = () => {
   return (
     <section className="relative">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent"
-        >
-          Andy Lechlak
-        </motion.h2>
+        <div className="relative">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent relative z-20"
+          >
+            Andy Lechlak
+          </motion.h2>
+          
+          {/* Sparkles effect container */}
+          <div className="absolute inset-0 h-24 -top-2 w-full">
+            <SparklesCore
+              id="aboutSparkles"
+              background="transparent"
+              minSize={0.6}
+              maxSize={1.2}
+              particleDensity={70}
+              className="w-full h-full"
+              particleColor="#38b2ac"
+              speed={0.8}
+            />
+          </div>
+        </div>
+        
         <div className="glass-card p-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10" />
           <div className="flex flex-col md:flex-row gap-12 items-center relative">
