@@ -1,6 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Github, Mail, MessageSquare, Globe } from "lucide-react";
+import { Github, Mail, MessageSquare } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { motion } from "framer-motion";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -23,12 +23,6 @@ export const Contact = () => {
       icon: Mail,
       label: "Email",
       href: "mailto:andrewlechlak@gmail.com",
-      color: "group-hover:text-sky-500"
-    },
-    {
-      icon: Globe,
-      label: "21st.dev",
-      href: "https://21st.dev",
       color: "group-hover:text-sky-500"
     }
   ];
@@ -62,7 +56,7 @@ export const Contact = () => {
               Let's collaborate on developing and enhancing engineering workflows together.
             </p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-3 gap-4 md:gap-8">
             {contactMethods.map((method, index) => (
               <motion.a
                 key={index}
