@@ -4,7 +4,6 @@ import { Github, Mail, MessageSquare } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { motion } from "framer-motion";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { SparklesCore } from "@/components/ui/sparkles";
 
 export const Contact = () => {
   const contactMethods = [
@@ -29,27 +28,13 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="relative min-h-[600px]">
-      {/* Sparkles Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <SparklesCore
-          id="contactSparkles"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={70}
-          className="w-full h-full"
-          particleColor="#05abc4"
-          speed={0.8}
-        />
-      </div>
-      
+    <section id="contact" className="relative">
       <div className="absolute inset-0 from-sky-500/10 via-transparent to-transparent" />
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent relative z-10"
+        className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent"
       >
         Get in Touch
       </motion.h2>

@@ -4,7 +4,6 @@ import { Database, GitBranch, Cpu } from 'lucide-react';
 import { WorkflowStep } from './WorkflowStep';
 import { useInView } from 'react-intersection-observer';
 import { FlickeringGrid } from './ui/flickering-grid';
-import { SparklesCore } from './ui/sparkles';
 
 export const WorkflowAnimation = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -46,20 +45,6 @@ export const WorkflowAnimation = () => {
 
   return (
     <div className="relative w-full py-20 flex justify-center">
-      {/* Sparkles Background - Full width and height */}
-      <div className="absolute inset-0 z-0 w-full h-full">
-        <SparklesCore
-          id="workflowSparkles"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={70}
-          className="w-full h-full"
-          particleColor="#05abc4"
-          speed={0.8}
-        />
-      </div>
-      
       {/* Flickering Grid Background - Full width and height */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <FlickeringGrid
