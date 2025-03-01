@@ -2,6 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
 import { GradientButton } from "@/components/ui/gradient-button";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 export const Portfolio = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -46,52 +47,68 @@ export const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="">
-      <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
-        Portfolio
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <div 
-            key={index} 
-            className="relative"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className={`transition-opacity duration-300 ${hoveredIndex === index ? "opacity-100" : "opacity-0"} absolute -inset-0.5 rounded-lg z-0 flex items-center justify-center`}>
-              <GradientButton 
-                className="w-full h-full cursor-default" 
-                variant={index % 2 === 0 ? "default" : "variant"}
-              >
-                &nbsp;
-              </GradientButton>
-            </div>
-            
-            <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col relative z-10">
-              <div className="relative h-48">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+    <section id="portfolio" className="relative min-h-[600px]">
+      {/* Sparkles Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <SparklesCore
+          id="portfolioSparkles"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={70}
+          className="w-full h-full"
+          particleColor="#05abc4"
+          speed={0.8}
+        />
+      </div>
+      
+      <div className="relative z-10">
+        <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-teal-500 to-sky-500 bg-clip-text text-transparent">
+          Portfolio
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div 
+              key={index} 
+              className="relative"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className={`transition-opacity duration-300 ${hoveredIndex === index ? "opacity-100" : "opacity-0"} absolute -inset-0.5 rounded-lg z-0 flex items-center justify-center`}>
+                <GradientButton 
+                  className="w-full h-full cursor-default" 
+                  variant={index % 2 === 0 ? "default" : "variant"}
+                >
+                  &nbsp;
+                </GradientButton>
               </div>
-              <CardContent className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-semibold mb-3 text-sky-500">{project.title}</h3>
-                <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 text-sm rounded-full bg-sky-500/10 text-cyan-400"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
+              
+              <Card key={index} className="glass-card hover:scale-[1.02] transition-transform duration-300 overflow-hidden h-full flex flex-col relative z-10">
+                <div className="relative h-48">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        ))}
+                <CardContent className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold mb-3 text-sky-500">{project.title}</h3>
+                  <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 text-sm rounded-full bg-sky-500/10 text-cyan-400"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -25,7 +25,7 @@ const Index = () => {
         </div>
         
         {/* Workflow section - Full width outside container */}
-        <div className="w-full">
+        <div className="w-full -mx-4">
           <section id="workflow" className="py-8 relative w-full">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
