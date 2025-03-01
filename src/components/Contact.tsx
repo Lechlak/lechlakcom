@@ -40,7 +40,7 @@ export const Contact = () => {
       </motion.h2>
       <Card className="glass-card max-w-2xl mx-auto relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-teal-500/10" />
-        <BackgroundBeams className="opacity-40" />
+        <BackgroundBeams className="opacity-60" />
         <CardContent className="p-12 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
